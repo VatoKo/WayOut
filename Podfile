@@ -34,6 +34,9 @@ end
 def wayout_pods
   core_pods
   wayout_manager_pods
+  pod 'MaterialComponents/TextControls+OutlinedTextFields'
+  pod 'MaterialComponents/Buttons'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
 end
 
 

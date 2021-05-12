@@ -8,13 +8,13 @@
 import Foundation
 
 public struct User: Decodable {
-    let id: String
-    let name: String
-    let surname: String
-    let phoneNumber: String
-    let email: String
-    let numberPlate: String
-    let organizationId: String?
+    public let id: String
+    public let name: String
+    public let surname: String
+    public let phoneNumber: String
+    public let email: String
+    public let numberPlate: String
+    public let organizationId: String?
     
     public init(
         id: String,
