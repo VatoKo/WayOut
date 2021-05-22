@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="165" id="KGk-i7-Jjw" customClass="JoinOrganizationCell" customModule="WayOut" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="346" height="165"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="346" height="165"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DzV-ho-9IU" userLabel="Main Content View">
+                        <rect key="frame" x="16" y="4" width="314" height="157"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gEp-me-6bo">
+                                <rect key="frame" x="16" y="16" width="282" height="125"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Your not a member of any organization, you can not access number plate database" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sb-kQ-ceZ">
+                                        <rect key="frame" x="19" y="0.0" width="244.5" height="83"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join Organization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMp-bQ-mlI">
+                                        <rect key="frame" x="44.5" y="99" width="193.5" height="26"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gEp-me-6bo" firstAttribute="leading" secondItem="DzV-ho-9IU" secondAttribute="leading" constant="16" id="ZGh-YE-BbP"/>
+                            <constraint firstAttribute="trailing" secondItem="gEp-me-6bo" secondAttribute="trailing" constant="16" id="dMl-Em-3T6"/>
+                            <constraint firstAttribute="bottom" secondItem="gEp-me-6bo" secondAttribute="bottom" constant="16" id="hNf-Vz-pRn"/>
+                            <constraint firstItem="gEp-me-6bo" firstAttribute="top" secondItem="DzV-ho-9IU" secondAttribute="top" constant="16" id="nAq-he-X1f"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DzV-ho-9IU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="aGt-a9-uB0"/>
+                    <constraint firstItem="DzV-ho-9IU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="gMK-vK-xat"/>
+                    <constraint firstAttribute="trailing" secondItem="DzV-ho-9IU" secondAttribute="trailing" constant="16" id="ivL-7Q-JgF"/>
+                    <constraint firstAttribute="bottom" secondItem="DzV-ho-9IU" secondAttribute="bottom" constant="4" id="t6c-j7-yc9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="mainContainerView" destination="DzV-ho-9IU" id="QcK-Mx-LgV"/>
+            </connections>
+            <point key="canvasLocation" x="11.594202898550726" y="145.64732142857142"/>
+        </tableViewCell>
+    </objects>
+</document>

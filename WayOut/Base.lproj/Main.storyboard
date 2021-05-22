@@ -270,6 +270,62 @@ You've been missed!</string>
             </objects>
             <point key="canvasLocation" x="2137.68115942029" y="-238.39285714285714"/>
         </scene>
+        <!--User Home Controller-->
+        <scene sceneID="dsW-UN-NR7">
+            <objects>
+                <viewController storyboardIdentifier="UserHomeController" id="I1C-0s-B66" customClass="UserHomeController" customModule="WayOut" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hW5-Ke-P0a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VZ0-7g-Qcf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHs-iZ-LBX">
+                                <rect key="frame" x="0.0" y="774" width="414" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKx-D2-PYS" customClass="MDCButton">
+                                        <rect key="frame" x="8" y="16" width="398" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="Pjg-Dy-k3b"/>
+                                        </constraints>
+                                        <state key="normal" title="Scan Number Plate"/>
+                                        <connections>
+                                            <action selector="scanDidTap:" destination="I1C-0s-B66" eventType="touchUpInside" id="IgN-hC-qQo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qKx-D2-PYS" secondAttribute="bottom" constant="16" id="1ah-ms-PMc"/>
+                                    <constraint firstItem="qKx-D2-PYS" firstAttribute="leading" secondItem="aHs-iZ-LBX" secondAttribute="leading" constant="8" id="iQ9-oD-Ece"/>
+                                    <constraint firstAttribute="trailing" secondItem="qKx-D2-PYS" secondAttribute="trailing" constant="8" id="j4i-af-Zsy"/>
+                                    <constraint firstItem="qKx-D2-PYS" firstAttribute="top" secondItem="aHs-iZ-LBX" secondAttribute="top" constant="16" id="wIl-Yp-wL9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zj1-HH-JVZ"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aHs-iZ-LBX" firstAttribute="leading" secondItem="hW5-Ke-P0a" secondAttribute="leading" id="5AL-vZ-Xjp"/>
+                            <constraint firstAttribute="trailing" secondItem="aHs-iZ-LBX" secondAttribute="trailing" id="CAR-NP-ttF"/>
+                            <constraint firstItem="VZ0-7g-Qcf" firstAttribute="leading" secondItem="Zj1-HH-JVZ" secondAttribute="leading" id="D6K-c1-BRE"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="VZ0-7g-Qcf" secondAttribute="bottom" id="eke-Gx-YAl"/>
+                            <constraint firstItem="Zj1-HH-JVZ" firstAttribute="trailing" secondItem="VZ0-7g-Qcf" secondAttribute="trailing" id="goD-kY-9Az"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="aHs-iZ-LBX" secondAttribute="bottom" id="m3E-kp-JYu"/>
+                            <constraint firstAttribute="topMargin" secondItem="VZ0-7g-Qcf" secondAttribute="top" id="tve-H5-2kk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scanButton" destination="qKx-D2-PYS" id="B83-Sq-MtQ"/>
+                        <outlet property="tableView" destination="VZ0-7g-Qcf" id="tI2-7r-HeN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sy8-8p-ZrY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2957.971014492754" y="-238.39285714285714"/>
+        </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

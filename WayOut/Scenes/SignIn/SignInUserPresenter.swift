@@ -44,7 +44,7 @@ class SignInUserPresenterImpl: SignInUserPresenter {
                 self.view.isLoading = false
                 switch result {
                 case .success(let user):
-                    self.view.showBanner(title: "\(user.name) \(user.surname)", subtitle: user.numberPlate, style: .success)
+                    self.router.navigateToHome(of: user)
                 case .failure(let error):
                     self.view.shakeFields()
                     self.view.showBanner(title: "Error", subtitle: error.localizedDescription, style: .danger)

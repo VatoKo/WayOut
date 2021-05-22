@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="274" id="KGk-i7-Jjw" customClass="PersonalInfoCell" customModule="WayOut" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="253"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="253"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReZ-ub-ddn" userLabel="Main Content View">
+                        <rect key="frame" x="16" y="4" width="342" height="245"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-Yb-wQl">
+                                <rect key="frame" x="16" y="16" width="310" height="104"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jon Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="db9-aQ-tiz">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="26"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="YxR-L3-uoz">
+                                        <rect key="frame" x="0.0" y="46" width="184.5" height="58"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number plate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-7G-dtF">
+                                                <rect key="frame" x="0.0" y="0.0" width="76" height="16"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JO-001-HN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okX-9W-2Yv">
+                                                <rect key="frame" x="0.0" y="16" width="184.5" height="42"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dw-Do-7gS">
+                                <rect key="frame" x="0.0" y="124" width="334" height="1"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="upU-CV-avL"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7KT-go-bVq">
+                                <rect key="frame" x="16" y="133" width="310" height="92"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xzy-uX-hu3">
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="16"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bil-ny-1Xh">
+                                        <rect key="frame" x="0.0" y="24" width="310" height="68"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NP3-bV-zBs">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="30"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Jgk-hC-I6Q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Jgk-hC-I6Q" secondAttribute="height" multiplier="1:1" id="75W-Zf-zWO"/>
+                                                            <constraint firstAttribute="width" constant="30" id="cnZ-Up-CoA"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="555112233" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIz-Fx-pIL">
+                                                        <rect key="frame" x="38" y="0.0" width="95" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="235-dA-vOy">
+                                                <rect key="frame" x="0.0" y="38" width="169" height="30"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_icon" translatesAutoresizingMaskIntoConstraints="NO" id="z4H-mn-8ya">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="z4H-mn-8ya" secondAttribute="height" multiplier="1:1" id="R6S-Pk-ja1"/>
+                                                            <constraint firstAttribute="width" constant="30" id="wh4-Wi-NJW"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="j.doe@mail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aar-jB-TV7">
+                                                        <rect key="frame" x="38" y="0.0" width="131" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7KT-go-bVq" secondAttribute="trailing" constant="16" id="3e7-cC-LfT"/>
+                            <constraint firstItem="Kpf-Yb-wQl" firstAttribute="top" secondItem="ReZ-ub-ddn" secondAttribute="top" constant="16" id="E58-6M-gF3"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7KT-go-bVq" secondAttribute="bottom" constant="16" id="Fku-26-qCI"/>
+                            <constraint firstAttribute="trailing" secondItem="Kpf-Yb-wQl" secondAttribute="trailing" constant="16" id="KjO-Nn-hmh"/>
+                            <constraint firstItem="7KT-go-bVq" firstAttribute="leading" secondItem="ReZ-ub-ddn" secondAttribute="leading" constant="16" id="ZOd-AN-PRX"/>
+                            <constraint firstItem="0dw-Do-7gS" firstAttribute="leading" secondItem="ReZ-ub-ddn" secondAttribute="leading" id="efo-v1-9lB"/>
+                            <constraint firstItem="7KT-go-bVq" firstAttribute="top" secondItem="0dw-Do-7gS" secondAttribute="bottom" constant="8" id="lm3-yd-gAy"/>
+                            <constraint firstItem="Kpf-Yb-wQl" firstAttribute="leading" secondItem="ReZ-ub-ddn" secondAttribute="leading" constant="16" id="qXu-mA-pWP"/>
+                            <constraint firstItem="0dw-Do-7gS" firstAttribute="top" secondItem="Kpf-Yb-wQl" secondAttribute="bottom" constant="4" id="r7D-dt-1Pa"/>
+                            <constraint firstAttribute="trailing" secondItem="0dw-Do-7gS" secondAttribute="trailing" constant="8" id="r8T-zz-Q9K"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ReZ-ub-ddn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="H7t-Dy-1dm"/>
+                    <constraint firstAttribute="trailing" secondItem="ReZ-ub-ddn" secondAttribute="trailing" constant="16" id="ba4-qr-tq3"/>
+                    <constraint firstItem="ReZ-ub-ddn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="k26-Hv-8NY"/>
+                    <constraint firstAttribute="bottom" secondItem="ReZ-ub-ddn" secondAttribute="bottom" constant="4" id="nHN-KP-S3c"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="emailIcon" destination="z4H-mn-8ya" id="r8H-3M-olv"/>
+                <outlet property="emailLabel" destination="Aar-jB-TV7" id="nrb-7G-X3T"/>
+                <outlet property="mainContainerView" destination="ReZ-ub-ddn" id="fK1-Je-Vzl"/>
+                <outlet property="nameLabel" destination="db9-aQ-tiz" id="CDB-8f-VaA"/>
+                <outlet property="numberPlateLabel" destination="okX-9W-2Yv" id="Q7B-FB-six"/>
+                <outlet property="phoneNumberIcon" destination="Jgk-hC-I6Q" id="2t2-UT-9uI"/>
+                <outlet property="phoneNumberLabel" destination="JIz-Fx-pIL" id="Czi-ui-vYz"/>
+            </connections>
+            <point key="canvasLocation" x="-152.17391304347828" y="139.62053571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="email_icon" width="64" height="64"/>
+        <image name="phone_icon" width="64" height="64"/>
+    </resources>
+</document>
