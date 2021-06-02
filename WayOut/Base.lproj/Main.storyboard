@@ -296,7 +296,7 @@ You've been missed!</string>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="qKx-D2-PYS" secondAttribute="bottom" constant="16" id="1ah-ms-PMc"/>
                                     <constraint firstItem="qKx-D2-PYS" firstAttribute="leading" secondItem="aHs-iZ-LBX" secondAttribute="leading" constant="8" id="iQ9-oD-Ece"/>
@@ -326,9 +326,95 @@ You've been missed!</string>
             </objects>
             <point key="canvasLocation" x="2957.971014492754" y="-238.39285714285714"/>
         </scene>
+        <!--Plate Scanner Controller-->
+        <scene sceneID="Jh1-RY-CBe">
+            <objects>
+                <viewController storyboardIdentifier="PlateScannerController" id="LWj-LF-GMI" customClass="PlateScannerController" customModule="WayOut" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ffR-NZ-Zre">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYa-rR-N6n" userLabel="Preview View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jab-cp-Hso" userLabel="Plate Mask View">
+                                        <rect key="frame" x="32" y="412" width="350" height="72"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="72" id="6CF-9t-d7B"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Jab-cp-Hso" firstAttribute="centerX" secondItem="JYa-rR-N6n" secondAttribute="centerX" id="9OI-at-HMJ"/>
+                                    <constraint firstItem="Jab-cp-Hso" firstAttribute="centerY" secondItem="JYa-rR-N6n" secondAttribute="centerY" id="QkO-sn-FEY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jab-cp-Hso" secondAttribute="trailing" constant="32" id="v5u-lo-5Wx"/>
+                                    <constraint firstItem="Jab-cp-Hso" firstAttribute="leading" secondItem="JYa-rR-N6n" secondAttribute="leading" constant="32" id="vfY-n6-sbF"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YtN-mW-0tP">
+                                <rect key="frame" x="358" y="52" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YtN-mW-0tP" secondAttribute="height" multiplier="1:1" id="7bV-Al-riM"/>
+                                    <constraint firstAttribute="width" constant="40" id="uIE-et-Id3"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="close_icon">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapClose:" destination="LWj-LF-GMI" eventType="touchUpInside" id="D8Q-cY-8Y7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3X-6K-rtB" customClass="MDCButton">
+                                <rect key="frame" x="16" y="790" width="382" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="c5s-tk-ZkJ"/>
+                                </constraints>
+                                <state key="normal" title="Capture"/>
+                                <connections>
+                                    <action selector="didTapCapture:" destination="LWj-LF-GMI" eventType="touchUpInside" id="WBX-Ts-xeB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place number plate in shape and capture picture" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRb-mp-tH2">
+                                <rect key="frame" x="32" y="144" width="350" height="62.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ppw-Nq-lhK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JYa-rR-N6n" firstAttribute="leading" secondItem="Ppw-Nq-lhK" secondAttribute="leading" id="BGe-Jv-OyS"/>
+                            <constraint firstItem="YtN-mW-0tP" firstAttribute="top" secondItem="Ppw-Nq-lhK" secondAttribute="top" constant="8" id="JRa-Rd-qfZ"/>
+                            <constraint firstItem="JYa-rR-N6n" firstAttribute="top" secondItem="ffR-NZ-Zre" secondAttribute="top" id="OmC-ZV-zNK"/>
+                            <constraint firstItem="hRb-mp-tH2" firstAttribute="leading" secondItem="Ppw-Nq-lhK" secondAttribute="leading" constant="32" id="R2z-1p-tZh"/>
+                            <constraint firstItem="Ppw-Nq-lhK" firstAttribute="trailing" secondItem="JYa-rR-N6n" secondAttribute="trailing" id="RGi-Qc-1eE"/>
+                            <constraint firstItem="JYa-rR-N6n" firstAttribute="bottom" secondItem="ffR-NZ-Zre" secondAttribute="bottom" id="SSc-qY-7mm"/>
+                            <constraint firstItem="Ppw-Nq-lhK" firstAttribute="bottom" secondItem="d3X-6K-rtB" secondAttribute="bottom" constant="16" id="XMa-Eb-csr"/>
+                            <constraint firstItem="Ppw-Nq-lhK" firstAttribute="trailing" secondItem="d3X-6K-rtB" secondAttribute="trailing" constant="16" id="Y36-9y-XB3"/>
+                            <constraint firstItem="d3X-6K-rtB" firstAttribute="leading" secondItem="Ppw-Nq-lhK" secondAttribute="leading" constant="16" id="aWL-f0-eqF"/>
+                            <constraint firstItem="hRb-mp-tH2" firstAttribute="trailing" secondItem="Ppw-Nq-lhK" secondAttribute="trailing" constant="-32" id="bB1-K4-74E"/>
+                            <constraint firstItem="hRb-mp-tH2" firstAttribute="top" secondItem="Ppw-Nq-lhK" secondAttribute="top" constant="100" id="sdT-xt-BFv"/>
+                            <constraint firstItem="Ppw-Nq-lhK" firstAttribute="trailing" secondItem="YtN-mW-0tP" secondAttribute="trailing" constant="16" id="yze-DW-0p3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="captureButton" destination="d3X-6K-rtB" id="ba9-pv-vX8"/>
+                        <outlet property="plateMaskView" destination="Jab-cp-Hso" id="aSz-49-DFf"/>
+                        <outlet property="previewView" destination="JYa-rR-N6n" id="Rbl-e8-U7x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXD-cs-9ok" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3813.04347826087" y="-238.39285714285714"/>
+        </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="close_icon" width="22" height="22"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -76,6 +76,19 @@ extension UserHomeController: UITableViewDataSource {
     
 }
 
+extension UserHomeController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let capturedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            presenter.didSelectFromGallery(photo: capturedImage)
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
 extension UserHomeController {
     
     static func configured(with user: User) -> UserHomeController {

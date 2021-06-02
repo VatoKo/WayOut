@@ -5,7 +5,7 @@
 //  Created by Vakhtang Kostava on 13.05.21.
 //
 
-import Foundation
+import UIKit
 import Core
 
 protocol UserHomeView: AnyObject {
@@ -15,6 +15,7 @@ protocol UserHomeView: AnyObject {
 protocol UserHomePresenter {
     var tableDataSource: [CellModel] { get set }
     func didTapScan()
+    func didSelectFromGallery(photo: UIImage?)
 }
 
 class UserHomePresenterImpl: UserHomePresenter {
@@ -47,14 +48,25 @@ class UserHomePresenterImpl: UserHomePresenter {
     }
     
     func didTapScan() {
-        print("Did tap scan")
-        view.showImageSourceSelectionSheet(
-            didSelectCamera: {
-                print("Did select camera")
-            }, didSelectGallery: {
-                print("Did select gallery")
-            }
-        )
+        view.showImageSourceSelectionSheet(didSelectCamera: handleScannerCameraSelection, didSelectGallery: router.openGallery)
+    }
+    
+    private func handleScannerCameraSelection() {
+        router.openPlateScanner(delegate: self)
     }
     
 }
+
+extension UserHomePresenterImpl: PlateScannerControllerDelegate {
+    
+    func plateScannerController(_ sender: PlateScannerController, didCapture photo: UIImage?) {
+        print(photo)
+    }
+    
+    func didSelectFromGallery(photo: UIImage?) {
+        print(photo)
+    }
+    
+}
+
+
