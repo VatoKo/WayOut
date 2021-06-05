@@ -8,6 +8,7 @@
 import UIKit
 import Core
 import MaterialComponents.MDCOutlinedTextField
+import NotificationBannerSwift
 
 class UserHomeController: UIViewController {
 
@@ -85,6 +86,15 @@ extension UserHomeController: UIImagePickerControllerDelegate, UINavigationContr
         }
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    func showBanner(title: String?, subtitle: String, style: BannerStyle) {
+        let banner = NotificationBanner(
+            title: title,
+            subtitle: subtitle,
+            style: style
+        )
+        banner.show()
     }
     
 }

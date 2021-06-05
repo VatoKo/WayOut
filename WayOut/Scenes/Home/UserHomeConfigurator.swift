@@ -17,10 +17,13 @@ class UserHomeConfiguratorImpl: UserHomeConfigurator {
     func configure(_ controller: UserHomeController, user: User) {
         let router: UserHomeRouter = UserHomeRouterImpl(controller)
         
+        let plateRecognizer: PlateRecognizer = PlateRecognizerImpl()
+        
         let presenter: UserHomePresenter = UserHomePresenterImpl(
             view: controller,
             router: router,
-            user: user
+            user: user,
+            plateRecognizer: plateRecognizer
         )
         
         controller.presenter = presenter
