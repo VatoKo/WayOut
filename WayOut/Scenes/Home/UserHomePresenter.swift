@@ -66,7 +66,15 @@ class UserHomePresenterImpl: UserHomePresenter {
                 switch result{
                 case .success(let recognizedData):
                     print(recognizedData.recognizedNumberPlate)
-                    self.view.showBanner(title: "Recognized Number Plate", subtitle: recognizedData.recognizedNumberPlate, style: .success)
+                    self.router.showInfoDialog(
+                        with: InfoDialogModel(
+                            plateImage: recognizedData.rectangeBoundedImage,
+                            numberPlate: recognizedData.recognizedNumberPlate,
+                            name: "Jon Doe",
+                            phoneNumber: "555112233",
+                            email: "j.doe@gmail.com"
+                        )
+                    )
                 case .failure(let error):
                     self.view.showBanner(title: "Recognition Failed", subtitle: error.localizedDescription, style: .danger)                    
                 }

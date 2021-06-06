@@ -52,6 +52,7 @@
 		114DE24C2646F97F00B7AE7F /* WayOutManager.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 114DE24B2646F96600B7AE7F /* WayOutManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11BD34E9266BC0E600C70734 /* PlateRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BD34E8266BC0E600C70734 /* PlateRecognizer.swift */; };
 		11BD34EC266BC98800C70734 /* PlateRecognizerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BD34EB266BC98800C70734 /* PlateRecognizerError.swift */; };
+		11BD34F4266BD1FF00C70734 /* InfoDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BD34F3266BD1FF00C70734 /* InfoDialog.swift */; };
 		11EE830C2667F4EB000C12B1 /* PlateScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE83082667F4EB000C12B1 /* PlateScannerPresenter.swift */; };
 		11EE830D2667F4EB000C12B1 /* PlateScannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE83092667F4EB000C12B1 /* PlateScannerRouter.swift */; };
 		11EE830E2667F4EB000C12B1 /* PlateScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE830A2667F4EB000C12B1 /* PlateScannerController.swift */; };
@@ -139,6 +140,7 @@
 		114DE2452646F96600B7AE7F /* WayOutManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WayOutManager.xcodeproj; path = WayOutManager/WayOutManager.xcodeproj; sourceTree = "<group>"; };
 		11BD34E8266BC0E600C70734 /* PlateRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateRecognizer.swift; sourceTree = "<group>"; };
 		11BD34EB266BC98800C70734 /* PlateRecognizerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateRecognizerError.swift; sourceTree = "<group>"; };
+		11BD34F3266BD1FF00C70734 /* InfoDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDialog.swift; sourceTree = "<group>"; };
 		11EE83082667F4EB000C12B1 /* PlateScannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerPresenter.swift; sourceTree = "<group>"; };
 		11EE83092667F4EB000C12B1 /* PlateScannerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerRouter.swift; sourceTree = "<group>"; };
 		11EE830A2667F4EB000C12B1 /* PlateScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				114D2A9D264B0274008071BA /* SignUp */,
 				114D2B29264DA00D008071BA /* Home */,
 				11EE83052667F4A6000C12B1 /* PlateScanner */,
+				11BD34F0266BD1D600C70734 /* InfoDialog */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -390,6 +393,14 @@
 				11BD34EB266BC98800C70734 /* PlateRecognizerError.swift */,
 			);
 			path = PlateRecognizer;
+			sourceTree = "<group>";
+		};
+		11BD34F0266BD1D600C70734 /* InfoDialog */ = {
+			isa = PBXGroup;
+			children = (
+				11BD34F3266BD1FF00C70734 /* InfoDialog.swift */,
+			);
+			path = InfoDialog;
 			sourceTree = "<group>";
 		};
 		11EE83052667F4A6000C12B1 /* PlateScanner */ = {
@@ -582,6 +593,7 @@
 				11EE830C2667F4EB000C12B1 /* PlateScannerPresenter.swift in Sources */,
 				11EE830F2667F4EB000C12B1 /* PlateScannerConfigurator.swift in Sources */,
 				114D2ADB264B0784008071BA /* WelcomeRouter.swift in Sources */,
+				11BD34F4266BD1FF00C70734 /* InfoDialog.swift in Sources */,
 				114DE1F52646F63100B7AE7F /* WayoutDummy.swift in Sources */,
 				112C0BC726596BF70073FC92 /* TitleCell.swift in Sources */,
 				112C0BCA26596C8B0073FC92 /* TitleCellModel.swift in Sources */,

@@ -11,6 +11,7 @@ import MobileCoreServices
 protocol UserHomeRouter {
     func openPlateScanner(delegate: PlateScannerControllerDelegate)
     func openGallery()
+    func showInfoDialog(with model: InfoDialogModel)
 }
 
 class UserHomeRouterImpl: UserHomeRouter {
@@ -37,4 +38,10 @@ class UserHomeRouterImpl: UserHomeRouter {
         imagePickerController.allowsEditing = false
         controller?.present(imagePickerController, animated: true, completion: nil)
     }
+    
+    func showInfoDialog(with model: InfoDialogModel) {
+        let dialog = InfoDialog.configured(with: model)
+        controller?.present(dialog, animated: false, completion: nil)
+    }
+    
 }

@@ -110,20 +110,15 @@ extension PlateScannerController {
 
 extension PlateScannerController: AVCapturePhotoCaptureDelegate {
     
-    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
-        
-        guard error == nil, let photoSampleBuffer = photoSampleBuffer else {
-            print("Error capturing photo: \(String(describing: error))")
-            return
-        }
-        guard let imageData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(
-                forJPEGSampleBuffer: photoSampleBuffer,
-                previewPhotoSampleBuffer: previewPhotoSampleBuffer
-        ) else { return }
-        let capturedImage = UIImage.init(data: imageData , scale: 1.0)
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let photo = photo.cgImageRepresentation()?.takeUnretainedValue() else { return }
+        let ciImage = CIImage(cgImage: photo).oriented(forExifOrientation: 6)
+        guard let cgImage = CIContext(options: nil).createCGImage(ciImage, from: ciImage.extent) else { return }
+        let uiImage = UIImage(cgImage: cgImage)
         dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
-            self.delegate?.plateScannerController(self, didCapture: capturedImage)
+            self.delegate?.plateScannerController(self, didCapture: uiImage)
         }
     }
     
