@@ -18,12 +18,14 @@ class UserHomeConfiguratorImpl: UserHomeConfigurator {
         let router: UserHomeRouter = UserHomeRouterImpl(controller)
         
         let plateRecognizer: PlateRecognizer = PlateRecognizerImpl()
+        let plateFinder: PlateFinder = PlateFinderImpl.shared
         
         let presenter: UserHomePresenter = UserHomePresenterImpl(
             view: controller,
             router: router,
             user: user,
-            plateRecognizer: plateRecognizer
+            plateRecognizer: plateRecognizer,
+            plateFinder: plateFinder
         )
         
         controller.presenter = presenter

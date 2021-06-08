@@ -36,6 +36,7 @@ class UserHomePresenterImpl: UserHomePresenter {
     
     private let user: User
     private let plateRecognizer: PlateRecognizer
+    private let plateFinder: PlateFinder
     
     private weak var view: UserHomeView!
     private var router: UserHomeRouter
@@ -44,12 +45,14 @@ class UserHomePresenterImpl: UserHomePresenter {
         view: UserHomeView,
         router: UserHomeRouter,
         user: User,
-        plateRecognizer: PlateRecognizer
+        plateRecognizer: PlateRecognizer,
+        plateFinder: PlateFinder
     ) {
         self.view = view
         self.router = router
         self.user = user
         self.plateRecognizer = plateRecognizer
+        self.plateFinder = plateFinder
     }
     
     func didTapScan() {
@@ -65,18 +68,32 @@ class UserHomePresenterImpl: UserHomePresenter {
             DispatchQueue.main.async {
                 switch result{
                 case .success(let recognizedData):
-                    print(recognizedData.recognizedNumberPlate)
+                    self.handleRecognizedPlate(data: recognizedData)
+                case .failure(let error):
+                    self.view.showBanner(title: "Recognition Failed", subtitle: error.localizedDescription, style: .danger)                    
+                }
+            }
+        }
+    }
+    
+    private func handleRecognizedPlate(data: PlateRecognitionData) {
+        self.plateFinder.findUser(with: data.recognizedNumberPlate, in: self.user.organizationId ?? "123") { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let foundUser):
                     self.router.showInfoDialog(
                         with: InfoDialogModel(
-                            plateImage: recognizedData.rectangeBoundedImage,
-                            numberPlate: recognizedData.recognizedNumberPlate,
-                            name: "Jon Doe",
-                            phoneNumber: "555112233",
-                            email: "j.doe@gmail.com"
+                            plateImage: data.rectangeBoundedImage,
+                            numberPlate: data.recognizedNumberPlate,
+                            name: "\(foundUser.name) \(foundUser.surname)",
+                            phoneNumber: foundUser.phoneNumber,
+                            email: foundUser.email
                         )
                     )
                 case .failure(let error):
-                    self.view.showBanner(title: "Recognition Failed", subtitle: error.localizedDescription, style: .danger)                    
+                    if let error = error as? PlateFinderError {
+                        self.view.showBanner(title: "Error", subtitle: error.localizedDescription, style: .danger)
+                    }
                 }
             }
         }

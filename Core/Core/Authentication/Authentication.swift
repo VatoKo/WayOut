@@ -8,17 +8,14 @@
 import Foundation
 import Firebase
 
-public class Authentication {
+public class Authentication: DatabaseAccessible {
     
     public static let shared = Authentication()
     
-    private var databaseReference: DatabaseReference!
     private lazy var usersReference = databaseReference.child("users")
     private lazy var organizationsReference = databaseReference.child("organizations")
     
-    private init() {
-        databaseReference = Database.database(url: "https://wayout-94da9-default-rtdb.europe-west1.firebasedatabase.app").reference()
-    }
+    private init() {}
     
 }
 
