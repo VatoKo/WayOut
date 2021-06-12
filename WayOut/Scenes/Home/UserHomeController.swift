@@ -35,6 +35,7 @@ extension UserHomeController {
         tableView.registerNib(with: "PersonalInfoCell", type: PersonalInfoCell.self)
         tableView.registerNib(with: "TitleCell", type: TitleCell.self)
         tableView.registerNib(with: "JoinOrganizationCell", type: JoinOrganizationCell.self)
+        tableView.registerNib(with: "MyOrganizationCell", type: MyOrganizationCell.self)
         
         scanButton.setTitle("Scan Number Plate", for: .normal)
         scanButton.setTitleColor(.white, for: .normal)
@@ -42,6 +43,8 @@ extension UserHomeController {
         scanButton.setBackgroundColor(.black)
         scanButton.layer.cornerRadius = 16
         scanButton.setElevation(.raisedButtonResting, for: .normal)
+        
+        presenter.viewDidLoad()
     }
     
 }
@@ -112,6 +115,12 @@ extension UserHomeController {
 }
 
 extension UserHomeController: UserHomeView {
+    
+    var scanButtonIsEnabled: Bool {
+        get { scanButton.isEnabled }
+        set { scanButton.setEnabled(newValue, animated: true) }
+    }
+    
     
     func showImageSourceSelectionSheet(didSelectCamera: @escaping () -> Void, didSelectGallery: @escaping () -> Void) {
         let alert = UIAlertController(title: "Image Source Selection", message: "Please select an option below", preferredStyle: .actionSheet)

@@ -12,6 +12,7 @@ protocol UserHomeRouter {
     func openPlateScanner(delegate: PlateScannerControllerDelegate)
     func openGallery()
     func showInfoDialog(with model: InfoDialogModel)
+    func openWelcomePage()
 }
 
 class UserHomeRouterImpl: UserHomeRouter {
@@ -42,6 +43,11 @@ class UserHomeRouterImpl: UserHomeRouter {
     func showInfoDialog(with model: InfoDialogModel) {
         let dialog = InfoDialog.configured(with: model)
         controller?.present(dialog, animated: false, completion: nil)
+    }
+    
+    func openWelcomePage() {
+        let vc = WelcomeController.configured()
+        controller?.navigationController?.setViewControllers([vc], animated: true)
     }
     
 }

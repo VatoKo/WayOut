@@ -197,12 +197,29 @@ public extension Authentication {
 
 public extension Authentication {
     
+    func logout(completion: ((_ result: Result<Int, Error>) -> Void)?) {
+        do {
+            try Auth.auth().signOut()
+            completion?(.success(0))
+        } catch {
+            completion?(.failure(SignOutError()))
+        }
+    }
+    
+}
+
+public extension Authentication {
+    
     struct SignUpError: Error {
         let localizedDescription = "Unknown error occured during sign up"
     }
     
     struct SignInError: Error {
         let localizedDescription = "Unknown error occured during sign in"
+    }
+    
+    struct SignOutError: Error {
+        let localizedDescription = "Unable to log out"
     }
     
 }

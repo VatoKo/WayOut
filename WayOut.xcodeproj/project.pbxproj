@@ -53,6 +53,9 @@
 		11BD34E9266BC0E600C70734 /* PlateRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BD34E8266BC0E600C70734 /* PlateRecognizer.swift */; };
 		11BD34EC266BC98800C70734 /* PlateRecognizerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BD34EB266BC98800C70734 /* PlateRecognizerError.swift */; };
 		11BD34F4266BD1FF00C70734 /* InfoDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BD34F3266BD1FF00C70734 /* InfoDialog.swift */; };
+		11D815662674F3B90028EFF4 /* MyOrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D815642674F3B90028EFF4 /* MyOrganizationCell.swift */; };
+		11D815672674F3B90028EFF4 /* MyOrganizationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D815652674F3B90028EFF4 /* MyOrganizationCell.xib */; };
+		11D815692674F4030028EFF4 /* MyOrganizationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D815682674F4030028EFF4 /* MyOrganizationCellModel.swift */; };
 		11EE830C2667F4EB000C12B1 /* PlateScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE83082667F4EB000C12B1 /* PlateScannerPresenter.swift */; };
 		11EE830D2667F4EB000C12B1 /* PlateScannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE83092667F4EB000C12B1 /* PlateScannerRouter.swift */; };
 		11EE830E2667F4EB000C12B1 /* PlateScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE830A2667F4EB000C12B1 /* PlateScannerController.swift */; };
@@ -141,6 +144,9 @@
 		11BD34E8266BC0E600C70734 /* PlateRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateRecognizer.swift; sourceTree = "<group>"; };
 		11BD34EB266BC98800C70734 /* PlateRecognizerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateRecognizerError.swift; sourceTree = "<group>"; };
 		11BD34F3266BD1FF00C70734 /* InfoDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDialog.swift; sourceTree = "<group>"; };
+		11D815642674F3B90028EFF4 /* MyOrganizationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrganizationCell.swift; sourceTree = "<group>"; };
+		11D815652674F3B90028EFF4 /* MyOrganizationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrganizationCell.xib; sourceTree = "<group>"; };
+		11D815682674F4030028EFF4 /* MyOrganizationCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrganizationCellModel.swift; sourceTree = "<group>"; };
 		11EE83082667F4EB000C12B1 /* PlateScannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerPresenter.swift; sourceTree = "<group>"; };
 		11EE83092667F4EB000C12B1 /* PlateScannerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerRouter.swift; sourceTree = "<group>"; };
 		11EE830A2667F4EB000C12B1 /* PlateScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerController.swift; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 		1147BFCE264DA8CA0030B6B4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				11D815612674F3900028EFF4 /* MyOrganizationCell */,
 				112C0BCB26596D8C0073FC92 /* JoinOrganizationCell */,
 				1147BFDD264DAFF70030B6B4 /* GreetingCell */,
 				1147BFCF264DA8EF0030B6B4 /* PersonalInfoCell */,
@@ -216,6 +223,7 @@
 				1147BFD5264DAA5C0030B6B4 /* PersonalInfoCellModel.swift */,
 				112C0BC926596C8B0073FC92 /* TitleCellModel.swift */,
 				112C0BD02659710C0073FC92 /* JoinOrganizationCellModel.swift */,
+				11D815682674F4030028EFF4 /* MyOrganizationCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -403,6 +411,15 @@
 			path = InfoDialog;
 			sourceTree = "<group>";
 		};
+		11D815612674F3900028EFF4 /* MyOrganizationCell */ = {
+			isa = PBXGroup;
+			children = (
+				11D815642674F3B90028EFF4 /* MyOrganizationCell.swift */,
+				11D815652674F3B90028EFF4 /* MyOrganizationCell.xib */,
+			);
+			path = MyOrganizationCell;
+			sourceTree = "<group>";
+		};
 		11EE83052667F4A6000C12B1 /* PlateScanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +539,7 @@
 				114DE1052643059000B7AE7F /* GoogleService-Info.plist in Resources */,
 				1147BFE1264DB0160030B6B4 /* GreetingCell.xib in Resources */,
 				114DE0F72643039A00B7AE7F /* Assets.xcassets in Resources */,
+				11D815672674F3B90028EFF4 /* MyOrganizationCell.xib in Resources */,
 				1147BFD3264DA90B0030B6B4 /* PersonalInfoCell.xib in Resources */,
 				112C0BC826596BF70073FC92 /* TitleCell.xib in Resources */,
 				112C0BCF26596DC70073FC92 /* JoinOrganizationCell.xib in Resources */,
@@ -599,6 +617,7 @@
 				112C0BCA26596C8B0073FC92 /* TitleCellModel.swift in Sources */,
 				1147BFD2264DA90B0030B6B4 /* PersonalInfoCell.swift in Sources */,
 				114D2B1D264C413A008071BA /* LoaderOverlayable.swift in Sources */,
+				11D815662674F3B90028EFF4 /* MyOrganizationCell.swift in Sources */,
 				1147BFC8264DA84C0030B6B4 /* Reusable.swift in Sources */,
 				11BD34E9266BC0E600C70734 /* PlateRecognizer.swift in Sources */,
 				114D2ADC264B0784008071BA /* WelcomeController.swift in Sources */,
@@ -609,6 +628,7 @@
 				114D2AE0264B1426008071BA /* Configurable.swift in Sources */,
 				114D2AA4264B0294008071BA /* SignUpUserController.swift in Sources */,
 				1147BFE0264DB0160030B6B4 /* GreetingCell.swift in Sources */,
+				11D815692674F4030028EFF4 /* MyOrganizationCellModel.swift in Sources */,
 				11EE830E2667F4EB000C12B1 /* PlateScannerController.swift in Sources */,
 				114DE0F02643039800B7AE7F /* SceneDelegate.swift in Sources */,
 				112C0BCE26596DC70073FC92 /* JoinOrganizationCell.swift in Sources */,

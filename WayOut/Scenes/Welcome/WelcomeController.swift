@@ -67,3 +67,15 @@ extension WelcomeController: WelcomeView {
     
 }
 
+extension WelcomeController: Configurable {
+    
+    static func configured() -> WelcomeController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "WelcomeController") as! WelcomeController
+        let configurator = WelcomeConfiguratorImpl()
+        configurator.configure(vc)
+        return vc
+    }
+    
+}
+

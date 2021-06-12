@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReZ-ub-ddn" userLabel="Main Content View">
-                        <rect key="frame" x="16" y="4" width="342" height="245"/>
+                        <rect key="frame" x="16" y="5" width="342" height="243"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-Yb-wQl">
                                 <rect key="frame" x="16" y="16" width="310" height="104"/>
@@ -126,10 +126,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ReZ-ub-ddn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="H7t-Dy-1dm"/>
+                    <constraint firstItem="ReZ-ub-ddn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="H7t-Dy-1dm"/>
                     <constraint firstAttribute="trailing" secondItem="ReZ-ub-ddn" secondAttribute="trailing" constant="16" id="ba4-qr-tq3"/>
                     <constraint firstItem="ReZ-ub-ddn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="k26-Hv-8NY"/>
-                    <constraint firstAttribute="bottom" secondItem="ReZ-ub-ddn" secondAttribute="bottom" constant="4" id="nHN-KP-S3c"/>
+                    <constraint firstAttribute="bottom" secondItem="ReZ-ub-ddn" secondAttribute="bottom" constant="5" id="nHN-KP-S3c"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

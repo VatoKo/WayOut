@@ -22,7 +22,7 @@ class SignInUserRouterImpl: SignInUserRouter {
     
     func navigateToHome(of user: User) {
         let vc = UserHomeController.configured(with: user)
-        controller?.navigationController?.viewControllers = [vc]
+        controller?.navigationController?.setViewControllers([vc], animated: true)
     }
     
 }

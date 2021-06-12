@@ -10,12 +10,14 @@ import Core
 import NotificationBannerSwift
 
 protocol UserHomeView: AnyObject {
+    var scanButtonIsEnabled: Bool { get set }
     func showImageSourceSelectionSheet(didSelectCamera: @escaping () -> Void, didSelectGallery: @escaping () -> Void)
     func showBanner(title: String?, subtitle: String, style: BannerStyle)
 }
 
 protocol UserHomePresenter {
     var tableDataSource: [CellModel] { get set }
+    func viewDidLoad()
     func didTapScan()
     func didSelectFromGallery(photo: UIImage?)
 }
@@ -23,7 +25,7 @@ protocol UserHomePresenter {
 class UserHomePresenterImpl: UserHomePresenter {
     
     lazy var tableDataSource: [CellModel] = [
-        GreetingCellModel(greetingText: "Hello, \(user.name)!"),
+        GreetingCellModel(greetingText: "Hello, \(user.name)!", didTapLogout: handleLogout),
         PersonalInfoCellModel(
             name: "\(user.name) \(user.surname)",
             numberPlate: user.numberPlate,
@@ -31,7 +33,9 @@ class UserHomePresenterImpl: UserHomePresenter {
             email: user.email
         ),
         TitleCellModel(title: "Your organization"),
-        JoinOrganizationCellModel()
+        user.organizationId == nil
+            ? JoinOrganizationCellModel()
+            : MyOrganizationCellModel(organizationName: "Apple", organizationEmail: "apple@mail.com", numberOfMembers: "4350")
     ]
     
     private let user: User
@@ -53,6 +57,10 @@ class UserHomePresenterImpl: UserHomePresenter {
         self.user = user
         self.plateRecognizer = plateRecognizer
         self.plateFinder = plateFinder
+    }
+    
+    func viewDidLoad() {
+        view.scanButtonIsEnabled = user.organizationId != nil
     }
     
     func didTapScan() {
@@ -97,6 +105,21 @@ class UserHomePresenterImpl: UserHomePresenter {
                 }
             }
         }
+    }
+    
+    private func handleLogout() {
+        Authentication.shared.logout { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                switch result {
+                case .success:
+                    self.router.openWelcomePage()
+                case .failure(let error):
+                    self.view.showBanner(title: "Error", subtitle: error.localizedDescription, style: .danger)
+                }
+            }
+        }
+        
     }
     
 }

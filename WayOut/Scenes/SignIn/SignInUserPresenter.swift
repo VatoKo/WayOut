@@ -37,7 +37,6 @@ class SignInUserPresenterImpl: SignInUserPresenter {
     }
     
     func didTapSignIn() {
-        print("Did tap sign in")
         view.isLoading = true
         Authentication.shared.signIn(user: SignInUserData(email: view.email, password: view.password)) { (result) in
             DispatchQueue.main.async {
