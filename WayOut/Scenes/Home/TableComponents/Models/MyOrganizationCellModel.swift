@@ -7,11 +7,31 @@
 
 import Foundation
 
-struct MyOrganizationCellModel: CellModel {
+protocol OrganizationCellModel: CellModel {
+    var organizationName: String { get set }
+}
+
+struct MyOrganizationCellModel: OrganizationCellModel {
     
-    let organizationName: String
+    var organizationName: String
     let organizationEmail: String
     let numberOfMembers: String
+    let showsJoinButton: Bool
+    let didTapJoin: ((MyOrganizationCellModel) -> Void)?
+    
+    init(
+        organizationName: String,
+        organizationEmail: String,
+        numberOfMembers: String,
+        showsJoinButton: Bool = false,
+        didTapJoin: ((MyOrganizationCellModel) -> Void)? = nil
+    ) {
+        self.organizationName = organizationName
+        self.organizationEmail = organizationEmail
+        self.numberOfMembers = numberOfMembers
+        self.showsJoinButton = showsJoinButton
+        self.didTapJoin = didTapJoin
+    }
     
     var cellIdentifier: String {
         return MyOrganizationCell.reuseIdentifier

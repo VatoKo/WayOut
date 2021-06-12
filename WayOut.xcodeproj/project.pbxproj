@@ -56,6 +56,10 @@
 		11D815662674F3B90028EFF4 /* MyOrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D815642674F3B90028EFF4 /* MyOrganizationCell.swift */; };
 		11D815672674F3B90028EFF4 /* MyOrganizationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D815652674F3B90028EFF4 /* MyOrganizationCell.xib */; };
 		11D815692674F4030028EFF4 /* MyOrganizationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D815682674F4030028EFF4 /* MyOrganizationCellModel.swift */; };
+		11D8156F26750B980028EFF4 /* OrganizationChooserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8156B26750B980028EFF4 /* OrganizationChooserPresenter.swift */; };
+		11D8157026750B980028EFF4 /* OrganizationChooserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8156C26750B980028EFF4 /* OrganizationChooserRouter.swift */; };
+		11D8157126750B980028EFF4 /* OrganizationChooserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8156D26750B980028EFF4 /* OrganizationChooserController.swift */; };
+		11D8157226750B980028EFF4 /* OrganizationChooserConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8156E26750B980028EFF4 /* OrganizationChooserConfigurator.swift */; };
 		11EE830C2667F4EB000C12B1 /* PlateScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE83082667F4EB000C12B1 /* PlateScannerPresenter.swift */; };
 		11EE830D2667F4EB000C12B1 /* PlateScannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE83092667F4EB000C12B1 /* PlateScannerRouter.swift */; };
 		11EE830E2667F4EB000C12B1 /* PlateScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE830A2667F4EB000C12B1 /* PlateScannerController.swift */; };
@@ -147,6 +151,10 @@
 		11D815642674F3B90028EFF4 /* MyOrganizationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrganizationCell.swift; sourceTree = "<group>"; };
 		11D815652674F3B90028EFF4 /* MyOrganizationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrganizationCell.xib; sourceTree = "<group>"; };
 		11D815682674F4030028EFF4 /* MyOrganizationCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrganizationCellModel.swift; sourceTree = "<group>"; };
+		11D8156B26750B980028EFF4 /* OrganizationChooserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationChooserPresenter.swift; sourceTree = "<group>"; };
+		11D8156C26750B980028EFF4 /* OrganizationChooserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationChooserRouter.swift; sourceTree = "<group>"; };
+		11D8156D26750B980028EFF4 /* OrganizationChooserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationChooserController.swift; sourceTree = "<group>"; };
+		11D8156E26750B980028EFF4 /* OrganizationChooserConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationChooserConfigurator.swift; sourceTree = "<group>"; };
 		11EE83082667F4EB000C12B1 /* PlateScannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerPresenter.swift; sourceTree = "<group>"; };
 		11EE83092667F4EB000C12B1 /* PlateScannerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerRouter.swift; sourceTree = "<group>"; };
 		11EE830A2667F4EB000C12B1 /* PlateScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerController.swift; sourceTree = "<group>"; };
@@ -259,6 +267,7 @@
 				114D2B29264DA00D008071BA /* Home */,
 				11EE83052667F4A6000C12B1 /* PlateScanner */,
 				11BD34F0266BD1D600C70734 /* InfoDialog */,
+				11D8156A26750B400028EFF4 /* OrganizationChooser */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -418,6 +427,17 @@
 				11D815652674F3B90028EFF4 /* MyOrganizationCell.xib */,
 			);
 			path = MyOrganizationCell;
+			sourceTree = "<group>";
+		};
+		11D8156A26750B400028EFF4 /* OrganizationChooser */ = {
+			isa = PBXGroup;
+			children = (
+				11D8156D26750B980028EFF4 /* OrganizationChooserController.swift */,
+				11D8156B26750B980028EFF4 /* OrganizationChooserPresenter.swift */,
+				11D8156C26750B980028EFF4 /* OrganizationChooserRouter.swift */,
+				11D8156E26750B980028EFF4 /* OrganizationChooserConfigurator.swift */,
+			);
+			path = OrganizationChooser;
 			sourceTree = "<group>";
 		};
 		11EE83052667F4A6000C12B1 /* PlateScanner */ = {
@@ -597,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				114D2AEE264B1526008071BA /* SignInUserController.swift in Sources */,
+				11D8156F26750B980028EFF4 /* OrganizationChooserPresenter.swift in Sources */,
 				114D2B32264DA02C008071BA /* UserHomeController.swift in Sources */,
 				114DE0F22643039800B7AE7F /* ViewController.swift in Sources */,
 				11EE830D2667F4EB000C12B1 /* PlateScannerRouter.swift in Sources */,
@@ -606,6 +627,7 @@
 				1147BFD6264DAA5C0030B6B4 /* PersonalInfoCellModel.swift in Sources */,
 				11BD34EC266BC98800C70734 /* PlateRecognizerError.swift in Sources */,
 				114D2AA3264B0294008071BA /* SignUpUserRouter.swift in Sources */,
+				11D8157226750B980028EFF4 /* OrganizationChooserConfigurator.swift in Sources */,
 				114D2ADD264B0784008071BA /* WelcomeConfigurator.swift in Sources */,
 				114D2AEF264B1526008071BA /* SignInUserConfigurator.swift in Sources */,
 				11EE830C2667F4EB000C12B1 /* PlateScannerPresenter.swift in Sources */,
@@ -613,6 +635,7 @@
 				114D2ADB264B0784008071BA /* WelcomeRouter.swift in Sources */,
 				11BD34F4266BD1FF00C70734 /* InfoDialog.swift in Sources */,
 				114DE1F52646F63100B7AE7F /* WayoutDummy.swift in Sources */,
+				11D8157126750B980028EFF4 /* OrganizationChooserController.swift in Sources */,
 				112C0BC726596BF70073FC92 /* TitleCell.swift in Sources */,
 				112C0BCA26596C8B0073FC92 /* TitleCellModel.swift in Sources */,
 				1147BFD2264DA90B0030B6B4 /* PersonalInfoCell.swift in Sources */,
@@ -638,6 +661,7 @@
 				112C0BD12659710C0073FC92 /* JoinOrganizationCellModel.swift in Sources */,
 				1147BFCC264DA8710030B6B4 /* CellConfiguration.swift in Sources */,
 				114D2AA5264B0294008071BA /* SignUpUserConfigurator.swift in Sources */,
+				11D8157026750B980028EFF4 /* OrganizationChooserRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,6 +819,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = BOG.WayOut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -816,6 +841,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = BOG.WayOut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -12,10 +12,13 @@ class JoinOrganizationCell: UITableViewCell {
     @IBOutlet weak var mainContainerView: UIView!
     
     private var borderLayer: CAShapeLayer?
+    private var didTapView: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
+        mainContainerView.addGestureRecognizer(tapGesture)
     }
     
     override func layoutSubviews() {
@@ -29,13 +32,18 @@ class JoinOrganizationCell: UITableViewCell {
         )
     }
     
+    @objc
+    private func viewDidTap() {
+        didTapView?()
+    }
+    
 }
 
 extension JoinOrganizationCell: CellViewModel {
     
     func configure(with model: CellModel) {
         if let model = model as? JoinOrganizationCellModel {
-            
+            didTapView = model.didTapJoinOrganization
         }
     }
     

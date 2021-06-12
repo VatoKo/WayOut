@@ -9,6 +9,8 @@ import Foundation
 
 struct JoinOrganizationCellModel: CellModel {
         
+    let didTapJoinOrganization: () -> Void
+
     var cellIdentifier: String {
         return JoinOrganizationCell.reuseIdentifier
     }

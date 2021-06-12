@@ -40,11 +40,30 @@ class SignInUserPresenterImpl: SignInUserPresenter {
         view.isLoading = true
         Authentication.shared.signIn(user: SignInUserData(email: view.email, password: view.password)) { (result) in
             DispatchQueue.main.async {
-                self.view.isLoading = false
                 switch result {
                 case .success(let user):
-                    self.router.navigateToHome(of: user)
+                    let isOrganizationMember = user.organizationId != nil
+                    if isOrganizationMember {
+                        OrganizationManager.shared.fetchAllOrganizations { [weak self] result in
+                            DispatchQueue.main.async {
+                                guard let self = self else { return }
+                                self.view.isLoading = false
+                                switch result {
+                                case .success(let organizations):
+                                    if let organization = organizations.first(where: { $0.id == user.organizationId }) {
+                                        self.router.navigateToHome(of: user, with: organization)
+                                    }
+                                case .failure(let error):
+                                    self.view.showBanner(title: "Error", subtitle: error.localizedDescription, style: .danger)
+                                }
+                            }
+                        }
+                    } else {
+                        self.view.isLoading = false
+                        self.router.navigateToHome(of: user, with: nil)
+                    }
                 case .failure(let error):
+                    self.view.isLoading = false
                     self.view.shakeFields()
                     self.view.showBanner(title: "Error", subtitle: error.localizedDescription, style: .danger)
                 }

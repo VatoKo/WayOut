@@ -104,11 +104,11 @@ extension UserHomeController: UIImagePickerControllerDelegate, UINavigationContr
 
 extension UserHomeController {
     
-    static func configured(with user: User) -> UserHomeController {
+    static func configured(with user: User, organization: Organization?) -> UserHomeController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "UserHomeController") as! UserHomeController
         let configurator = UserHomeConfiguratorImpl()
-        configurator.configure(vc, user: user)
+        configurator.configure(vc, user: user, organization: organization)
         return vc
     }
     

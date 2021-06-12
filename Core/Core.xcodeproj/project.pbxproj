@@ -18,6 +18,7 @@
 		114DE279264809AB00B7AE7F /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DE278264809AB00B7AE7F /* Authentication.swift */; };
 		11821868266FD271007EE064 /* DatabaseAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11821867266FD271007EE064 /* DatabaseAccessible.swift */; };
 		1182186D266FD483007EE064 /* PlateFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1182186C266FD483007EE064 /* PlateFinder.swift */; };
+		11D81575267515CA0028EFF4 /* OrganizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D81574267515CA0028EFF4 /* OrganizationManager.swift */; };
 		7D288C5A209E877EC41C0B07 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA885F3367913308C295E013 /* Pods_Core.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		114DE278264809AB00B7AE7F /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		11821867266FD271007EE064 /* DatabaseAccessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseAccessible.swift; sourceTree = "<group>"; };
 		1182186C266FD483007EE064 /* PlateFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateFinder.swift; sourceTree = "<group>"; };
+		11D81574267515CA0028EFF4 /* OrganizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationManager.swift; sourceTree = "<group>"; };
 		213D19BF7A685CB111B5864C /* Pods-Core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.release.xcconfig"; path = "Target Support Files/Pods-Core/Pods-Core.release.xcconfig"; sourceTree = "<group>"; };
 		BA885F3367913308C295E013 /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E7EFE8DDEFEFD286939B1C /* Pods-Core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.debug.xcconfig"; path = "Target Support Files/Pods-Core/Pods-Core.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				11821866266FD22F007EE064 /* Common */,
 				114DE2772648098100B7AE7F /* Authentication */,
 				1182186B266FD42A007EE064 /* PlateFinder */,
+				11D81573267515A90028EFF4 /* OrganizationManager */,
 				114DE1C22646959F00B7AE7F /* Core.h */,
 				114DE1C32646959F00B7AE7F /* Info.plist */,
 				114DE1CB264695D200B7AE7F /* CoreDummy.swift */,
@@ -143,6 +146,14 @@
 				1182186C266FD483007EE064 /* PlateFinder.swift */,
 			);
 			path = PlateFinder;
+			sourceTree = "<group>";
+		};
+		11D81573267515A90028EFF4 /* OrganizationManager */ = {
+			isa = PBXGroup;
+			children = (
+				11D81574267515CA0028EFF4 /* OrganizationManager.swift */,
+			);
+			path = OrganizationManager;
 			sourceTree = "<group>";
 		};
 		CD19EA37AFE65623CC3FF103 /* Pods */ = {
@@ -262,6 +273,7 @@
 			files = (
 				114DE1CC264695D200B7AE7F /* CoreDummy.swift in Sources */,
 				11821868266FD271007EE064 /* DatabaseAccessible.swift in Sources */,
+				11D81575267515CA0028EFF4 /* OrganizationManager.swift in Sources */,
 				1182186D266FD483007EE064 /* PlateFinder.swift in Sources */,
 				114D2A022648383B008071BA /* SignInUserData.swift in Sources */,
 				114DE279264809AB00B7AE7F /* Authentication.swift in Sources */,

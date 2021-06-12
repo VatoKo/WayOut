@@ -9,12 +9,12 @@ import Foundation
 import Core
 
 protocol UserHomeConfigurator {
-    func configure(_ controller: UserHomeController, user: User)
+    func configure(_ controller: UserHomeController, user: User, organization: Organization?)
 }
 
 class UserHomeConfiguratorImpl: UserHomeConfigurator {
     
-    func configure(_ controller: UserHomeController, user: User) {
+    func configure(_ controller: UserHomeController, user: User, organization: Organization?) {
         let router: UserHomeRouter = UserHomeRouterImpl(controller)
         
         let plateRecognizer: PlateRecognizer = PlateRecognizerImpl()
@@ -24,6 +24,7 @@ class UserHomeConfiguratorImpl: UserHomeConfigurator {
             view: controller,
             router: router,
             user: user,
+            organization: organization,
             plateRecognizer: plateRecognizer,
             plateFinder: plateFinder
         )

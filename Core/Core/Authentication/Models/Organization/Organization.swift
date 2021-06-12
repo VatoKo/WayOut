@@ -8,9 +8,9 @@
 import Foundation
 
 public struct Organization: Decodable {
-    let id: String
-    let name: String
-    let email: String
+    public let id: String
+    public let name: String
+    public let email: String
     
     public init(
         id: String,

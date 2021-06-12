@@ -13,6 +13,7 @@ protocol UserHomeRouter {
     func openGallery()
     func showInfoDialog(with model: InfoDialogModel)
     func openWelcomePage()
+    func openOrganizationChooser()
 }
 
 class UserHomeRouterImpl: UserHomeRouter {
@@ -48,6 +49,12 @@ class UserHomeRouterImpl: UserHomeRouter {
     func openWelcomePage() {
         let vc = WelcomeController.configured()
         controller?.navigationController?.setViewControllers([vc], animated: true)
+    }
+    
+    func openOrganizationChooser() {
+        let vc = OrganizationChooserController.configured()
+        vc.modalPresentationStyle = .fullScreen
+        controller?.present(vc, animated: true, completion: nil)
     }
     
 }

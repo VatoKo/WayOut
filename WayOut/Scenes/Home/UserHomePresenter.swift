@@ -34,11 +34,12 @@ class UserHomePresenterImpl: UserHomePresenter {
         ),
         TitleCellModel(title: "Your organization"),
         user.organizationId == nil
-            ? JoinOrganizationCellModel()
-            : MyOrganizationCellModel(organizationName: "Apple", organizationEmail: "apple@mail.com", numberOfMembers: "4350")
+            ? JoinOrganizationCellModel(didTapJoinOrganization: handleJoinOrganization)
+            : MyOrganizationCellModel(organizationName: organization!.name, organizationEmail: organization!.email, numberOfMembers: "100")
     ]
     
     private let user: User
+    private let organization: Organization?
     private let plateRecognizer: PlateRecognizer
     private let plateFinder: PlateFinder
     
@@ -49,18 +50,21 @@ class UserHomePresenterImpl: UserHomePresenter {
         view: UserHomeView,
         router: UserHomeRouter,
         user: User,
+        organization: Organization?,
         plateRecognizer: PlateRecognizer,
         plateFinder: PlateFinder
     ) {
         self.view = view
         self.router = router
         self.user = user
+        self.organization = organization
         self.plateRecognizer = plateRecognizer
         self.plateFinder = plateFinder
     }
     
     func viewDidLoad() {
-        view.scanButtonIsEnabled = user.organizationId != nil
+        let isOrganizationMember = user.organizationId != nil
+        view.scanButtonIsEnabled = isOrganizationMember
     }
     
     func didTapScan() {
@@ -119,7 +123,10 @@ class UserHomePresenterImpl: UserHomePresenter {
                 }
             }
         }
-        
+    }
+    
+    private func handleJoinOrganization() {
+        router.openOrganizationChooser()
     }
     
 }

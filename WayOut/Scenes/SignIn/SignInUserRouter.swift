@@ -9,7 +9,7 @@ import Foundation
 import Core
 
 protocol SignInUserRouter {
-    func navigateToHome(of user: User)
+    func navigateToHome(of user: User, with organization: Organization?)
 }
 
 class SignInUserRouterImpl: SignInUserRouter {
@@ -20,8 +20,8 @@ class SignInUserRouterImpl: SignInUserRouter {
         self.controller = controller
     }
     
-    func navigateToHome(of user: User) {
-        let vc = UserHomeController.configured(with: user)
+    func navigateToHome(of user: User, with organization: Organization?) {
+        let vc = UserHomeController.configured(with: user, organization: organization)
         controller?.navigationController?.setViewControllers([vc], animated: true)
     }
     
