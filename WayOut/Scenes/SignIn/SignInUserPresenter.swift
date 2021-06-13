@@ -33,7 +33,7 @@ class SignInUserPresenterImpl: SignInUserPresenter {
     }
     
     func didTapSignUp() {
-        print("Did tap sign up")
+        router.nagigateToSignUp()
     }
     
     func didTapSignIn() {
