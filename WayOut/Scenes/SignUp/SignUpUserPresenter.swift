@@ -30,14 +30,18 @@ class SignUpUserPresenterImpl: SignUpUserPresenter {
     private weak var view: SignUpUserView?
     private var router: SignUpUserRouter
     
+    private static let PasswordValidationRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+    private static let EmailValidationRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    private static let NumberplateValidationRegex = "[A-Z]{2}-[0-9]{3}-[A-Z]{2}"
+    
     init(view: SignUpUserView, router: SignUpUserRouter) {
         self.view = view
         self.router = router
     }
     
     func didTapCreateAccount() {
-        // TODO: Add user data validation
         guard let view = view else { return }
+        guard isDataValidated else { return }
         Authentication.shared.signUp(
             user: .init(
                 email: view.email,
@@ -47,9 +51,8 @@ class SignUpUserPresenterImpl: SignUpUserPresenter {
                 phoneNumber: view.phoneNumber,
                 numberPlate: view.numberPlate
             )
-        ) { [weak self] result in
+        ) { result in
             DispatchQueue.main.async {
-                guard let self = self else { return }
                 switch result {
                 case .success(let user):
                     print(user)
@@ -63,4 +66,54 @@ class SignUpUserPresenterImpl: SignUpUserPresenter {
             }
         }
     }
+    
+}
+
+// MARK: Data Validation
+extension SignUpUserPresenterImpl {
+    
+    private var isDataValidated: Bool {
+        guard let view = view else { return false }
+        let fields = [
+            view.name,
+            view.surname,
+            view.phoneNumber,
+            view.numberPlate,
+            view.email,
+            view.password,
+            view.repeatPassword
+        ]
+        if !fields.allSatisfy({ !$0.isEmpty }) {
+            view.showBanner(title: nil, subtitle: "Please fill all the fields to continue", style: .warning)
+            return false
+        }
+        
+        if view.password != view.repeatPassword {
+            view.showBanner(title: nil, subtitle: "Entered passwords do not match", style: .warning)
+            return false
+        }
+        
+        if view.phoneNumber.count != 9 {
+            view.showBanner(title: nil, subtitle: "The phone number is not valid", style: .warning)
+            return false
+        }
+        
+        if !view.password.matches(SignUpUserPresenterImpl.PasswordValidationRegex) {
+            view.showBanner(title: nil, subtitle: "The password does not satisfy requirements", style: .warning)
+            return false
+        }
+        
+        if !view.email.matches(SignUpUserPresenterImpl.EmailValidationRegex) {
+            view.showBanner(title: nil, subtitle: "The email is not in valid format", style: .warning)
+            return false
+        }
+        
+        if !view.numberPlate.matches(SignUpUserPresenterImpl.NumberplateValidationRegex) {
+            view.showBanner(title: nil, subtitle: "Invalid number plate format", style: .warning)
+            return false
+        }
+        
+        return true
+    }
+    
 }

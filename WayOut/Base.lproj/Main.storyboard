@@ -147,10 +147,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="W9e-AF-i8l">
-                                                <rect key="frame" x="16" y="16" width="382" height="496"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="601"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1Cs-8x-Gsd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="221"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="273.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXC-zk-hNi">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="21"/>
@@ -158,32 +158,51 @@
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y2x-jC-UoX" customClass="MDCOutlinedTextField">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="y2x-jC-UoX" customClass="MDCOutlinedTextField">
                                                                 <rect key="frame" x="0.0" y="37" width="382" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" textContentType="name"/>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="lj4-fa-v2M" id="KUa-Ro-bpI"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Bx-hC-v3h" customClass="MDCOutlinedTextField">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8Bx-hC-v3h" customClass="MDCOutlinedTextField">
                                                                 <rect key="frame" x="0.0" y="87" width="382" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" textContentType="family-name"/>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="lj4-fa-v2M" id="5UY-kr-GHZ"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6w-4Z-Eyd" customClass="MDCOutlinedTextField">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Yfq-qn-Vq2">
                                                                 <rect key="frame" x="0.0" y="137" width="382" height="34"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                                <connections>
-                                                                    <outlet property="delegate" destination="lj4-fa-v2M" id="3S2-2M-X1V"/>
-                                                                </connections>
-                                                            </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VqV-Lu-eNV" customClass="MDCOutlinedTextField">
-                                                                <rect key="frame" x="0.0" y="187" width="382" height="34"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+995" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoK-uU-4nA">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="44.5" height="34"/>
+                                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="T6w-4Z-Eyd" customClass="MDCOutlinedTextField">
+                                                                        <rect key="frame" x="51.5" y="0.0" width="330.5" height="34"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="lj4-fa-v2M" id="3S2-2M-X1V"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GZ-f3-kV1">
+                                                                <rect key="frame" x="0.0" y="187" width="382" height="36.5"/>
+                                                                <string key="text">Valid number plate format: XX-###-XX. 
+Examples: AA-111-AA, AA-001-BB, ZZ-999-XX</string>
+                                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VqV-Lu-eNV" customClass="MDCOutlinedTextField">
+                                                                <rect key="frame" x="0.0" y="239.5" width="382" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
@@ -193,7 +212,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="KOZ-oV-oxl">
-                                                        <rect key="frame" x="0.0" y="245" width="382" height="171"/>
+                                                        <rect key="frame" x="0.0" y="297.5" width="382" height="223.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zi0-Uc-LhO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="21"/>
@@ -201,26 +220,32 @@
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qxn-IF-fog" customClass="MDCOutlinedTextField">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qxn-IF-fog" customClass="MDCOutlinedTextField">
                                                                 <rect key="frame" x="0.0" y="37" width="382" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="lj4-fa-v2M" id="JyX-W9-miF"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haP-4Z-IP6" customClass="MDCOutlinedTextField">
-                                                                <rect key="frame" x="0.0" y="87" width="382" height="34"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The password must consist of minimum 8 characters and must contain at least 1 alphabet and 1 number" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4re-CD-2JM">
+                                                                <rect key="frame" x="0.0" y="87" width="382" height="36.5"/>
+                                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="haP-4Z-IP6" customClass="MDCOutlinedTextField">
+                                                                <rect key="frame" x="0.0" y="139.5" width="382" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" textContentType="new-password"/>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="lj4-fa-v2M" id="mrB-Oa-b1r"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YE4-It-pNK" customClass="MDCOutlinedTextField">
-                                                                <rect key="frame" x="0.0" y="137" width="382" height="34"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YE4-It-pNK" customClass="MDCOutlinedTextField">
+                                                                <rect key="frame" x="0.0" y="189.5" width="382" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" textContentType="new-password"/>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="lj4-fa-v2M" id="ldf-PR-Qlv"/>
                                                                 </connections>
@@ -228,7 +253,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb5-Yb-Wbb" customClass="MDCButton">
-                                                        <rect key="frame" x="0.0" y="440" width="382" height="56"/>
+                                                        <rect key="frame" x="0.0" y="545" width="382" height="56"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="56" id="VY2-pK-39G"/>
                                                         </constraints>
@@ -245,6 +270,7 @@
                                         <constraints>
                                             <constraint firstItem="W9e-AF-i8l" firstAttribute="top" secondItem="tlW-R9-C3j" secondAttribute="top" constant="16" id="BN8-5D-Dwi"/>
                                             <constraint firstItem="W9e-AF-i8l" firstAttribute="leading" secondItem="tlW-R9-C3j" secondAttribute="leading" constant="16" id="GrU-Lc-2iE"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="W9e-AF-i8l" secondAttribute="bottom" id="NSn-K7-QEW"/>
                                             <constraint firstAttribute="trailing" secondItem="W9e-AF-i8l" secondAttribute="trailing" constant="16" id="zvv-kP-wPc"/>
                                         </constraints>
                                     </view>

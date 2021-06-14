@@ -60,6 +60,7 @@
 		11D8157026750B980028EFF4 /* OrganizationChooserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8156C26750B980028EFF4 /* OrganizationChooserRouter.swift */; };
 		11D8157126750B980028EFF4 /* OrganizationChooserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8156D26750B980028EFF4 /* OrganizationChooserController.swift */; };
 		11D8157226750B980028EFF4 /* OrganizationChooserConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8156E26750B980028EFF4 /* OrganizationChooserConfigurator.swift */; };
+		11D815992677C5440028EFF4 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D815982677C5440028EFF4 /* StringExtensions.swift */; };
 		11EE830C2667F4EB000C12B1 /* PlateScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE83082667F4EB000C12B1 /* PlateScannerPresenter.swift */; };
 		11EE830D2667F4EB000C12B1 /* PlateScannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE83092667F4EB000C12B1 /* PlateScannerRouter.swift */; };
 		11EE830E2667F4EB000C12B1 /* PlateScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE830A2667F4EB000C12B1 /* PlateScannerController.swift */; };
@@ -155,6 +156,7 @@
 		11D8156C26750B980028EFF4 /* OrganizationChooserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationChooserRouter.swift; sourceTree = "<group>"; };
 		11D8156D26750B980028EFF4 /* OrganizationChooserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationChooserController.swift; sourceTree = "<group>"; };
 		11D8156E26750B980028EFF4 /* OrganizationChooserConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationChooserConfigurator.swift; sourceTree = "<group>"; };
+		11D815982677C5440028EFF4 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		11EE83082667F4EB000C12B1 /* PlateScannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerPresenter.swift; sourceTree = "<group>"; };
 		11EE83092667F4EB000C12B1 /* PlateScannerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerRouter.swift; sourceTree = "<group>"; };
 		11EE830A2667F4EB000C12B1 /* PlateScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerController.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				114D2AFC264C3791008071BA /* UIViewExtensions.swift */,
+				11D815982677C5440028EFF4 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				114D2AED264B1526008071BA /* SignInUserRouter.swift in Sources */,
 				114D2AA2264B0294008071BA /* SignUpUserPresenter.swift in Sources */,
 				114D2AE0264B1426008071BA /* Configurable.swift in Sources */,
+				11D815992677C5440028EFF4 /* StringExtensions.swift in Sources */,
 				114D2AA4264B0294008071BA /* SignUpUserController.swift in Sources */,
 				1147BFE0264DB0160030B6B4 /* GreetingCell.swift in Sources */,
 				11D815692674F4030028EFF4 /* MyOrganizationCellModel.swift in Sources */,
