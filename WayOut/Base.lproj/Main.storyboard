@@ -333,10 +333,10 @@ Examples: AA-111-AA, AA-001-BB, ZZ-999-XX</string>
             </objects>
             <point key="canvasLocation" x="63.768115942028992" y="98.4375"/>
         </scene>
-        <!--Sign In User Controller-->
+        <!--User-->
         <scene sceneID="fJn-jE-CEM">
             <objects>
-                <viewController storyboardIdentifier="SignInUserController" id="6bS-EB-DlY" customClass="SignInUserController" customModule="WayOut" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInUserController" title="User" id="6bS-EB-DlY" customClass="SignInUserController" customModule="WayOut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oDN-t3-mL7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

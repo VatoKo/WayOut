@@ -26,6 +26,9 @@ end
 target 'WayOutManager' do
   project 'WayOutManager/WayOutManager.project'
   wayout_manager_pods
+  pod 'MaterialComponents/TextControls+OutlinedTextFields'
+  pod 'MaterialComponents/Buttons'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
 end
 
 

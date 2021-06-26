@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import WayOutManager
 
 protocol WelcomeRouter {
     func navigateToUserLogin()
+    func navigateToOrganizationLogin()
 }
 
 class WelcomeRouterImpl: WelcomeRouter {
@@ -21,6 +23,11 @@ class WelcomeRouterImpl: WelcomeRouter {
     
     func navigateToUserLogin() {
         let vc = SignInUserController.configured()
+        controller?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToOrganizationLogin() {
+        let vc = SignInOrganizationController.configured()
         controller?.navigationController?.pushViewController(vc, animated: true)
     }
     

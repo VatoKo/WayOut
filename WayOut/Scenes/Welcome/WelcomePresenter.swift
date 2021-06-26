@@ -27,7 +27,7 @@ class WelcomePresenterImpl: WelcomePresenter {
     }
     
     func didTapOrganization() {
-        print("did tap organization")
+        router.navigateToOrganizationLogin()
     }
     
     func didTapUser() {
