@@ -8,7 +8,7 @@
 import Foundation
 
 protocol OrganizationHomeRouter {
-    
+    func showMemberDialog(with model: MemberDialogModel)
 }
 
 class OrganizationHomeRouterImpl: OrganizationHomeRouter {
@@ -17,6 +17,11 @@ class OrganizationHomeRouterImpl: OrganizationHomeRouter {
     
     init(_ controller: OrganizationHomeController?) {
         self.controller = controller
+    }
+    
+    func showMemberDialog(with model: MemberDialogModel) {
+        let vc = MemberDialog.configured(with: model)
+        controller?.present(vc, animated: true, completion: nil)
     }
     
 }

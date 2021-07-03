@@ -40,16 +40,17 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="940-Ir-4fK">
-                                <rect key="frame" x="16" y="335.5" width="382" height="402.5"/>
+                                <rect key="frame" x="16" y="342.5" width="382" height="395.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wayout_logo" translatesAutoresizingMaskIntoConstraints="NO" id="hVt-7z-FGf">
-                                        <rect key="frame" x="87.5" y="0.0" width="207" height="207"/>
+                                        <rect key="frame" x="91" y="0.0" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hVt-7z-FGf" secondAttribute="height" multiplier="1:1" id="1yf-dh-aaT"/>
+                                            <constraint firstAttribute="width" constant="200" id="LMK-4p-U8t"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nGa-vc-CsQ">
-                                        <rect key="frame" x="15" y="243" width="352.5" height="159.5"/>
+                                        <rect key="frame" x="15" y="236" width="352.5" height="159.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan car's license plate and find your way out" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQ9-mM-Lc1">
                                                 <rect key="frame" x="0.0" y="0.0" width="352.5" height="73"/>
@@ -75,7 +76,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EX0-v7-3IV" secondAttribute="trailing" constant="16" id="PT9-DE-JJ7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="940-Ir-4fK" secondAttribute="trailing" constant="16" id="Viz-yJ-tMf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EX0-v7-3IV" secondAttribute="bottom" constant="32" id="duo-SS-dFE"/>
-                            <constraint firstItem="hVt-7z-FGf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="j15-TW-aPe"/>
                             <constraint firstItem="EX0-v7-3IV" firstAttribute="top" secondItem="940-Ir-4fK" secondAttribute="bottom" constant="36" id="vAM-oY-9x4"/>
                             <constraint firstItem="EX0-v7-3IV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="w7w-my-tPb"/>
                         </constraints>
@@ -607,10 +607,10 @@ You've been missed!</string>
             </objects>
             <point key="canvasLocation" x="3813.04347826087" y="-238.39285714285714"/>
         </scene>
-        <!--Info Dialog-->
+        <!--Member Dialog-->
         <scene sceneID="rg0-KO-2m0">
             <objects>
-                <viewController storyboardIdentifier="InfoDialog" id="GrM-ke-c2o" customClass="InfoDialog" customModule="WayOut" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoDialog" id="GrM-ke-c2o" customClass="MemberDialog" customModule="WayOut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qK0-kK-cfa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

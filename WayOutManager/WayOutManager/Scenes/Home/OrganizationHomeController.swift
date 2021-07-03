@@ -7,6 +7,7 @@
 
 import UIKit
 import Core
+import NotificationBannerSwift
 
 public class OrganizationHomeController: UIViewController {
 
@@ -26,8 +27,17 @@ extension OrganizationHomeController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerNib(with: "GreetingCell", type: GreetingCell.self)
+        tableView.registerNib(with: "MyOrganizationCell", type: MyOrganizationCell.self)
+        tableView.registerNib(with: "TitleCell", type: TitleCell.self)
+        tableView.registerNib(with: "MemberCell", type: MemberCell.self)
+        tableView.registerNib(with: "NoMembersCell", type: NoMembersCell.self)
         
         presenter.viewDidLoad()
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
     
 }
@@ -37,10 +47,6 @@ extension OrganizationHomeController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-    }
-    
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
     
 }
@@ -63,6 +69,15 @@ extension OrganizationHomeController: UITableViewDataSource {
 }
 
 extension OrganizationHomeController: OrganizationHomeView {
+    
+    func showBanner(title: String?, subtitle: String, style: BannerStyle) {
+        let banner = NotificationBanner(
+            title: title,
+            subtitle: subtitle,
+            style: style
+        )
+        banner.show()
+    }
     
 }
 

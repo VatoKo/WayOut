@@ -33,6 +33,19 @@
 		11DF2A632687674800E44942 /* GreetingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF2A622687674800E44942 /* GreetingCellModel.swift */; };
 		11DF2A662687689500E44942 /* LoaderOverlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF2A652687689500E44942 /* LoaderOverlayable.swift */; };
 		11DF2A682687694C00E44942 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF2A672687694C00E44942 /* UIViewExtensions.swift */; };
+		11E9101B2690999200DB8E0D /* MyOrganizationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E910192690999200DB8E0D /* MyOrganizationCell.xib */; };
+		11E9101C2690999200DB8E0D /* MyOrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9101A2690999200DB8E0D /* MyOrganizationCell.swift */; };
+		11E9101E269099A700DB8E0D /* OrganizationCardCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9101D269099A700DB8E0D /* OrganizationCardCellModel.swift */; };
+		11E9102226909BC400DB8E0D /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9102026909BC400DB8E0D /* TitleCell.swift */; };
+		11E9102326909BC400DB8E0D /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E9102126909BC400DB8E0D /* TitleCell.xib */; };
+		11E9102526909BCE00DB8E0D /* TitleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9102426909BCE00DB8E0D /* TitleCellModel.swift */; };
+		11E9102926909CD600DB8E0D /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9102726909CD600DB8E0D /* MemberCell.swift */; };
+		11E9102A26909CD600DB8E0D /* MemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E9102826909CD600DB8E0D /* MemberCell.xib */; };
+		11E9102C2690A12300DB8E0D /* MemberCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9102B2690A12300DB8E0D /* MemberCellModel.swift */; };
+		11E9102F2690A9CD00DB8E0D /* MemberDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9102E2690A9CD00DB8E0D /* MemberDialog.swift */; };
+		11E910332690B18600DB8E0D /* NoMembersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E910312690B18600DB8E0D /* NoMembersCell.xib */; };
+		11E910342690B18600DB8E0D /* NoMembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E910322690B18600DB8E0D /* NoMembersCell.swift */; };
+		11E910362690B1E000DB8E0D /* NoMembersCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E910352690B1E000DB8E0D /* NoMembersCellModel.swift */; };
 		16D248BE25414030B8EB232D /* Pods_WayOutManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACFEEAB14A66E8DF025AC577 /* Pods_WayOutManager.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +102,19 @@
 		11DF2A622687674800E44942 /* GreetingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingCellModel.swift; sourceTree = "<group>"; };
 		11DF2A652687689500E44942 /* LoaderOverlayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderOverlayable.swift; sourceTree = "<group>"; };
 		11DF2A672687694C00E44942 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		11E910192690999200DB8E0D /* MyOrganizationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrganizationCell.xib; sourceTree = "<group>"; };
+		11E9101A2690999200DB8E0D /* MyOrganizationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrganizationCell.swift; sourceTree = "<group>"; };
+		11E9101D269099A700DB8E0D /* OrganizationCardCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCardCellModel.swift; sourceTree = "<group>"; };
+		11E9102026909BC400DB8E0D /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		11E9102126909BC400DB8E0D /* TitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
+		11E9102426909BCE00DB8E0D /* TitleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCellModel.swift; sourceTree = "<group>"; };
+		11E9102726909CD600DB8E0D /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
+		11E9102826909CD600DB8E0D /* MemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberCell.xib; sourceTree = "<group>"; };
+		11E9102B2690A12300DB8E0D /* MemberCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCellModel.swift; sourceTree = "<group>"; };
+		11E9102E2690A9CD00DB8E0D /* MemberDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDialog.swift; sourceTree = "<group>"; };
+		11E910312690B18600DB8E0D /* NoMembersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoMembersCell.xib; sourceTree = "<group>"; };
+		11E910322690B18600DB8E0D /* NoMembersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoMembersCell.swift; sourceTree = "<group>"; };
+		11E910352690B1E000DB8E0D /* NoMembersCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMembersCellModel.swift; sourceTree = "<group>"; };
 		ACFEEAB14A66E8DF025AC577 /* Pods_WayOutManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WayOutManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB43FE3A6C9115C50292F440 /* Pods-WayOutManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayOutManager.debug.xcconfig"; path = "Target Support Files/Pods-WayOutManager/Pods-WayOutManager.debug.xcconfig"; sourceTree = "<group>"; };
 		FB9810166DE682947494175F /* Pods-WayOutManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayOutManager.release.xcconfig"; path = "Target Support Files/Pods-WayOutManager/Pods-WayOutManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +186,7 @@
 				11DF2A2926874D6E00E44942 /* Home */,
 				11DF2A1F26874CB700E44942 /* SignUp */,
 				11DF29F82687466900E44942 /* SignIn */,
+				11E9102D2690A9BF00DB8E0D /* MemberDialog */,
 				11DF29F9268746A300E44942 /* ManagerMain.storyboard */,
 			);
 			path = Scenes;
@@ -256,6 +283,10 @@
 		11DF2A5B268766E800E44942 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				11E910302690B13100DB8E0D /* NoMembersCell */,
+				11E9102626909CBC00DB8E0D /* MemberCell */,
+				11E9101F26909B9100DB8E0D /* TitleCell */,
+				11E910172690994B00DB8E0D /* OrganizationCardCell */,
 				11DF2A5D268766F200E44942 /* GreetingCell */,
 			);
 			path = Cells;
@@ -265,6 +296,10 @@
 			isa = PBXGroup;
 			children = (
 				11DF2A622687674800E44942 /* GreetingCellModel.swift */,
+				11E9101D269099A700DB8E0D /* OrganizationCardCellModel.swift */,
+				11E9102426909BCE00DB8E0D /* TitleCellModel.swift */,
+				11E9102B2690A12300DB8E0D /* MemberCellModel.swift */,
+				11E910352690B1E000DB8E0D /* NoMembersCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +319,50 @@
 				11DF2A652687689500E44942 /* LoaderOverlayable.swift */,
 			);
 			path = LoadingOverlayable;
+			sourceTree = "<group>";
+		};
+		11E910172690994B00DB8E0D /* OrganizationCardCell */ = {
+			isa = PBXGroup;
+			children = (
+				11E9101A2690999200DB8E0D /* MyOrganizationCell.swift */,
+				11E910192690999200DB8E0D /* MyOrganizationCell.xib */,
+			);
+			path = OrganizationCardCell;
+			sourceTree = "<group>";
+		};
+		11E9101F26909B9100DB8E0D /* TitleCell */ = {
+			isa = PBXGroup;
+			children = (
+				11E9102026909BC400DB8E0D /* TitleCell.swift */,
+				11E9102126909BC400DB8E0D /* TitleCell.xib */,
+			);
+			path = TitleCell;
+			sourceTree = "<group>";
+		};
+		11E9102626909CBC00DB8E0D /* MemberCell */ = {
+			isa = PBXGroup;
+			children = (
+				11E9102726909CD600DB8E0D /* MemberCell.swift */,
+				11E9102826909CD600DB8E0D /* MemberCell.xib */,
+			);
+			path = MemberCell;
+			sourceTree = "<group>";
+		};
+		11E9102D2690A9BF00DB8E0D /* MemberDialog */ = {
+			isa = PBXGroup;
+			children = (
+				11E9102E2690A9CD00DB8E0D /* MemberDialog.swift */,
+			);
+			path = MemberDialog;
+			sourceTree = "<group>";
+		};
+		11E910302690B13100DB8E0D /* NoMembersCell */ = {
+			isa = PBXGroup;
+			children = (
+				11E910322690B18600DB8E0D /* NoMembersCell.swift */,
+				11E910312690B18600DB8E0D /* NoMembersCell.xib */,
+			);
+			path = NoMembersCell;
 			sourceTree = "<group>";
 		};
 		65CCB860EC42ADFEB8298A1D /* Frameworks */ = {
@@ -393,7 +472,11 @@
 			files = (
 				11DF2A362687544700E44942 /* ManagerAssets.xcassets in Resources */,
 				11DF29FA268746A300E44942 /* ManagerMain.storyboard in Resources */,
+				11E9101B2690999200DB8E0D /* MyOrganizationCell.xib in Resources */,
+				11E910332690B18600DB8E0D /* NoMembersCell.xib in Resources */,
+				11E9102A26909CD600DB8E0D /* MemberCell.xib in Resources */,
 				11DF2A612687672F00E44942 /* GreetingCell.xib in Resources */,
+				11E9102326909BC400DB8E0D /* TitleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +512,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11E910362690B1E000DB8E0D /* NoMembersCellModel.swift in Sources */,
+				11E9101C2690999200DB8E0D /* MyOrganizationCell.swift in Sources */,
+				11E9102F2690A9CD00DB8E0D /* MemberDialog.swift in Sources */,
 				11DF2A062687475D00E44942 /* Configurable.swift in Sources */,
 				11DF2A682687694C00E44942 /* UIViewExtensions.swift in Sources */,
 				11DF2A2E26874D8500E44942 /* OrganizationHomePresenter.swift in Sources */,
@@ -439,17 +525,23 @@
 				11DF29FF268746DF00E44942 /* SignInOrganizationPresenter.swift in Sources */,
 				11DF2A01268746DF00E44942 /* SignInOrganizationController.swift in Sources */,
 				11DF2A3126874D8500E44942 /* OrganizationHomeConfigurator.swift in Sources */,
+				11E9101E269099A700DB8E0D /* OrganizationCardCellModel.swift in Sources */,
+				11E9102226909BC400DB8E0D /* TitleCell.swift in Sources */,
 				11DF2A2626874CCA00E44942 /* SignUpOrganizationRouter.swift in Sources */,
 				11DF2A56268765A000E44942 /* CellConfiguration.swift in Sources */,
 				11DF2A662687689500E44942 /* LoaderOverlayable.swift in Sources */,
 				11DF2A00268746DF00E44942 /* SignInOrganizationRouter.swift in Sources */,
+				11E910342690B18600DB8E0D /* NoMembersCell.swift in Sources */,
 				11DF2A602687672F00E44942 /* GreetingCell.swift in Sources */,
 				11DF2A2726874CCA00E44942 /* SignUpOrganizationController.swift in Sources */,
 				11DF2A632687674800E44942 /* GreetingCellModel.swift in Sources */,
+				11E9102C2690A12300DB8E0D /* MemberCellModel.swift in Sources */,
 				11DF2A532687565700E44942 /* StringExtensions.swift in Sources */,
+				11E9102926909CD600DB8E0D /* MemberCell.swift in Sources */,
 				11DF2A2F26874D8500E44942 /* OrganizationHomeRouter.swift in Sources */,
 				11DF2A02268746DF00E44942 /* SignInOrganizationConfigurator.swift in Sources */,
 				11DF2A59268765DE00E44942 /* ReusableCell.swift in Sources */,
+				11E9102526909BCE00DB8E0D /* TitleCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

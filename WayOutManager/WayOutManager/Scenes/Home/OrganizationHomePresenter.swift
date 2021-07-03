@@ -7,9 +7,10 @@
 
 import Foundation
 import Core
+import NotificationBannerSwift
 
 protocol OrganizationHomeView: AnyObject {
-    
+    func showBanner(title: String?, subtitle: String, style: BannerStyle)
 }
 
 protocol OrganizationHomePresenter {
@@ -19,9 +20,7 @@ protocol OrganizationHomePresenter {
 
 class OrganizationHomePresenterImpl: OrganizationHomePresenter {
     
-    var tableDataSource: [CellModel] = [
-        GreetingCellModel(greetingText: "WayOut", didTapLogout: {})
-    ]
+    lazy var tableDataSource: [CellModel] = staticCellModels + (membersModels ?? [noMembersModel])
     
     private let organization: Organization
     private let members: [User]
@@ -42,7 +41,53 @@ class OrganizationHomePresenterImpl: OrganizationHomePresenter {
     }
     
     func viewDidLoad() {
-        print("Organization: ", organization)
-        print("Members: ", members)
+        
     }
+    
+    private func didTapMemberCell(model: MemberCellModel) {
+        let member = members.first(where: { $0.id == model.id })!
+        router.showMemberDialog(
+            with: .init(
+                numberPlate: member.numberPlate,
+                name: "\(member.name) \(member.surname)",
+                phoneNumber: member.phoneNumber,
+                email: member.email
+            )
+        )
+    }
+    
+    private func handleLogout() {
+        
+    }
+}
+
+extension OrganizationHomePresenterImpl {
+    
+    var staticCellModels: [CellModel] {
+        return [
+            GreetingCellModel(greetingText: "WayOut", didTapLogout: handleLogout),
+            MyOrganizationCellModel(organizationName: organization.name, organizationEmail: organization.email, numberOfMembers: "\(members.count)"),
+            TitleCellModel(title: "Your organization members")
+        ]
+    }
+    
+    var membersModels: [CellModel]? {
+        if !members.isEmpty {
+            return members.map {
+                MemberCellModel(
+                    id: $0.id,
+                    name: "\($0.name) \($0.surname)",
+                    numberPlate: $0.numberPlate,
+                    didTapCell: didTapMemberCell(model:)
+                )
+            }
+        } else {
+            return nil
+        }
+    }
+    
+    var noMembersModel: CellModel {
+        return NoMembersCellModel(text: "Your organization has no members yet")
+    }
+    
 }
