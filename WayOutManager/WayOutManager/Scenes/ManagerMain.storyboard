@@ -148,20 +148,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDd-62-gDu">
-                                <rect key="frame" x="135" y="442.5" width="144.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eac-TZ-bm8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jG6-8d-5vS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="VDd-62-gDu" firstAttribute="centerX" secondItem="jG6-8d-5vS" secondAttribute="centerX" id="2JA-Ht-QRs"/>
-                            <constraint firstItem="VDd-62-gDu" firstAttribute="centerY" secondItem="jG6-8d-5vS" secondAttribute="centerY" id="MVq-Mn-coS"/>
+                            <constraint firstItem="jG6-8d-5vS" firstAttribute="trailing" secondItem="eac-TZ-bm8" secondAttribute="trailing" id="7ou-UP-urH"/>
+                            <constraint firstItem="jG6-8d-5vS" firstAttribute="bottom" secondItem="eac-TZ-bm8" secondAttribute="bottom" id="B51-zC-sQP"/>
+                            <constraint firstItem="eac-TZ-bm8" firstAttribute="leading" secondItem="jG6-8d-5vS" secondAttribute="leading" id="aXO-fy-XqE"/>
+                            <constraint firstItem="eac-TZ-bm8" firstAttribute="top" secondItem="jG6-8d-5vS" secondAttribute="top" id="mel-bT-fKP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="eac-TZ-bm8" id="eT0-bq-YVC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qcq-kr-Xcf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

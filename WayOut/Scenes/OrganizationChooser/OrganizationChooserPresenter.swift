@@ -58,7 +58,7 @@ class OrganizationChooserPresenterImpl: OrganizationChooserPresenter {
     }
     
     func viewDidLoad() {
-        OrganizationManager.shared.fetchAllOrganizations { [weak self] result in
+        DatabaseManager.shared.fetchAllOrganizations { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 switch result {

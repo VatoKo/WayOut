@@ -7,6 +7,7 @@
 
 import UIKit
 import MaterialComponents.MDCOutlinedTextField
+import NotificationBannerSwift
 
 public class SignInOrganizationController: UIViewController {
 
@@ -14,6 +15,8 @@ public class SignInOrganizationController: UIViewController {
     @IBOutlet weak var passwordField: MDCOutlinedTextField!
     @IBOutlet weak var signUpButton: MDCButton!
     @IBOutlet weak var signInButton: MDCButton!
+    
+    var loadingOverlay: UIAlertController?
     
     var presenter: SignInOrganizationPresenter!
     
@@ -23,6 +26,17 @@ public class SignInOrganizationController: UIViewController {
     
     @IBAction func signInDidTap(_ sender: MDCButton) {
         presenter.didTapSignIn()
+    }
+    
+    var isLoading: Bool = false {
+        didSet {
+            if isLoading {
+                var temp = self
+                temp.showLoadingOverlay()
+            } else {
+                hideLoadingOverlay()
+            }
+        }
     }
 
     
@@ -57,6 +71,30 @@ extension SignInOrganizationController {
 
 extension SignInOrganizationController: SignInOrganizationView {
     
+    var email: String {
+        get { emailField.text ?? "" }
+        set { emailField.text = newValue }
+    }
+    
+    var password: String {
+        get { passwordField.text ?? "" }
+        set { passwordField.text = newValue }
+    }
+    
+    func shakeFields() {
+        emailField.shake()
+        passwordField.shake()
+    }
+    
+    func showBanner(title: String?, subtitle: String, style: BannerStyle) {
+        let banner = NotificationBanner(
+            title: title,
+            subtitle: subtitle,
+            style: style
+        )
+        banner.show()
+    }
+    
 }
 
 extension SignInOrganizationController: Configurable {
@@ -70,3 +108,5 @@ extension SignInOrganizationController: Configurable {
     }
     
 }
+
+extension SignInOrganizationController: LoaderOverlayable {}

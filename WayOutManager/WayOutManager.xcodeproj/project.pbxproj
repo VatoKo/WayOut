@@ -26,6 +26,13 @@
 		11DF2A3126874D8500E44942 /* OrganizationHomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF2A2D26874D8500E44942 /* OrganizationHomeConfigurator.swift */; };
 		11DF2A362687544700E44942 /* ManagerAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11DF2A352687544700E44942 /* ManagerAssets.xcassets */; };
 		11DF2A532687565700E44942 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF2A522687565700E44942 /* StringExtensions.swift */; };
+		11DF2A56268765A000E44942 /* CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF2A55268765A000E44942 /* CellConfiguration.swift */; };
+		11DF2A59268765DE00E44942 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF2A58268765DE00E44942 /* ReusableCell.swift */; };
+		11DF2A602687672F00E44942 /* GreetingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF2A5E2687672F00E44942 /* GreetingCell.swift */; };
+		11DF2A612687672F00E44942 /* GreetingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11DF2A5F2687672F00E44942 /* GreetingCell.xib */; };
+		11DF2A632687674800E44942 /* GreetingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF2A622687674800E44942 /* GreetingCellModel.swift */; };
+		11DF2A662687689500E44942 /* LoaderOverlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF2A652687689500E44942 /* LoaderOverlayable.swift */; };
+		11DF2A682687694C00E44942 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF2A672687694C00E44942 /* UIViewExtensions.swift */; };
 		16D248BE25414030B8EB232D /* Pods_WayOutManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACFEEAB14A66E8DF025AC577 /* Pods_WayOutManager.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +82,13 @@
 		11DF2A2D26874D8500E44942 /* OrganizationHomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationHomeConfigurator.swift; sourceTree = "<group>"; };
 		11DF2A352687544700E44942 /* ManagerAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ManagerAssets.xcassets; sourceTree = "<group>"; };
 		11DF2A522687565700E44942 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		11DF2A55268765A000E44942 /* CellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguration.swift; sourceTree = "<group>"; };
+		11DF2A58268765DE00E44942 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		11DF2A5E2687672F00E44942 /* GreetingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreetingCell.swift; sourceTree = "<group>"; };
+		11DF2A5F2687672F00E44942 /* GreetingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GreetingCell.xib; sourceTree = "<group>"; };
+		11DF2A622687674800E44942 /* GreetingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingCellModel.swift; sourceTree = "<group>"; };
+		11DF2A652687689500E44942 /* LoaderOverlayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderOverlayable.swift; sourceTree = "<group>"; };
+		11DF2A672687694C00E44942 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		ACFEEAB14A66E8DF025AC577 /* Pods_WayOutManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WayOutManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB43FE3A6C9115C50292F440 /* Pods-WayOutManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayOutManager.debug.xcconfig"; path = "Target Support Files/Pods-WayOutManager/Pods-WayOutManager.debug.xcconfig"; sourceTree = "<group>"; };
 		FB9810166DE682947494175F /* Pods-WayOutManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayOutManager.release.xcconfig"; path = "Target Support Files/Pods-WayOutManager/Pods-WayOutManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				11DF2A502687564B00E44942 /* Extensions */,
+				11DF2A642687688400E44942 /* LoadingOverlayable */,
+				11DF2A57268765CF00E44942 /* ReusableCell */,
+				11DF2A542687659300E44942 /* CellConfiguration */,
 				11DF2A042687474600E44942 /* Configurable */,
 			);
 			path = Utils;
@@ -193,6 +210,7 @@
 		11DF2A2926874D6E00E44942 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				11DF2A5A268766C400E44942 /* TableComponents */,
 				11DF2A2C26874D8500E44942 /* OrganizationHomeController.swift */,
 				11DF2A2A26874D8500E44942 /* OrganizationHomePresenter.swift */,
 				11DF2A2B26874D8500E44942 /* OrganizationHomeRouter.swift */,
@@ -205,8 +223,67 @@
 			isa = PBXGroup;
 			children = (
 				11DF2A522687565700E44942 /* StringExtensions.swift */,
+				11DF2A672687694C00E44942 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		11DF2A542687659300E44942 /* CellConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				11DF2A55268765A000E44942 /* CellConfiguration.swift */,
+			);
+			path = CellConfiguration;
+			sourceTree = "<group>";
+		};
+		11DF2A57268765CF00E44942 /* ReusableCell */ = {
+			isa = PBXGroup;
+			children = (
+				11DF2A58268765DE00E44942 /* ReusableCell.swift */,
+			);
+			path = ReusableCell;
+			sourceTree = "<group>";
+		};
+		11DF2A5A268766C400E44942 /* TableComponents */ = {
+			isa = PBXGroup;
+			children = (
+				11DF2A5C268766EC00E44942 /* Models */,
+				11DF2A5B268766E800E44942 /* Cells */,
+			);
+			path = TableComponents;
+			sourceTree = "<group>";
+		};
+		11DF2A5B268766E800E44942 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				11DF2A5D268766F200E44942 /* GreetingCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		11DF2A5C268766EC00E44942 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11DF2A622687674800E44942 /* GreetingCellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11DF2A5D268766F200E44942 /* GreetingCell */ = {
+			isa = PBXGroup;
+			children = (
+				11DF2A5E2687672F00E44942 /* GreetingCell.swift */,
+				11DF2A5F2687672F00E44942 /* GreetingCell.xib */,
+			);
+			path = GreetingCell;
+			sourceTree = "<group>";
+		};
+		11DF2A642687688400E44942 /* LoadingOverlayable */ = {
+			isa = PBXGroup;
+			children = (
+				11DF2A652687689500E44942 /* LoaderOverlayable.swift */,
+			);
+			path = LoadingOverlayable;
 			sourceTree = "<group>";
 		};
 		65CCB860EC42ADFEB8298A1D /* Frameworks */ = {
@@ -316,6 +393,7 @@
 			files = (
 				11DF2A362687544700E44942 /* ManagerAssets.xcassets in Resources */,
 				11DF29FA268746A300E44942 /* ManagerMain.storyboard in Resources */,
+				11DF2A612687672F00E44942 /* GreetingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DF2A062687475D00E44942 /* Configurable.swift in Sources */,
+				11DF2A682687694C00E44942 /* UIViewExtensions.swift in Sources */,
 				11DF2A2E26874D8500E44942 /* OrganizationHomePresenter.swift in Sources */,
 				11DF2A2526874CCA00E44942 /* SignUpOrganizationPresenter.swift in Sources */,
 				114DE2322646F85600B7AE7F /* WayoutManagerDummy.swift in Sources */,
@@ -361,11 +440,16 @@
 				11DF2A01268746DF00E44942 /* SignInOrganizationController.swift in Sources */,
 				11DF2A3126874D8500E44942 /* OrganizationHomeConfigurator.swift in Sources */,
 				11DF2A2626874CCA00E44942 /* SignUpOrganizationRouter.swift in Sources */,
+				11DF2A56268765A000E44942 /* CellConfiguration.swift in Sources */,
+				11DF2A662687689500E44942 /* LoaderOverlayable.swift in Sources */,
 				11DF2A00268746DF00E44942 /* SignInOrganizationRouter.swift in Sources */,
+				11DF2A602687672F00E44942 /* GreetingCell.swift in Sources */,
 				11DF2A2726874CCA00E44942 /* SignUpOrganizationController.swift in Sources */,
+				11DF2A632687674800E44942 /* GreetingCellModel.swift in Sources */,
 				11DF2A532687565700E44942 /* StringExtensions.swift in Sources */,
 				11DF2A2F26874D8500E44942 /* OrganizationHomeRouter.swift in Sources */,
 				11DF2A02268746DF00E44942 /* SignInOrganizationConfigurator.swift in Sources */,
+				11DF2A59268765DE00E44942 /* ReusableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

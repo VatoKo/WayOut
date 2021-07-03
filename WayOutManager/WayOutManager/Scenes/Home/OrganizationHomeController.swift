@@ -6,11 +6,59 @@
 //
 
 import UIKit
+import Core
 
 public class OrganizationHomeController: UIViewController {
 
-    var presenter: OrganizationHomePresenter?
+    @IBOutlet weak var tableView: UITableView!
+    
+    var presenter: OrganizationHomePresenter!
 
+    
+}
+
+extension OrganizationHomeController {
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerNib(with: "GreetingCell", type: GreetingCell.self)
+        
+        presenter.viewDidLoad()
+    }
+    
+}
+
+// MARK: UITableViewDelegate
+extension OrganizationHomeController: UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+}
+
+// MARK: UITableViewDataSource
+extension OrganizationHomeController: UITableViewDataSource {
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.tableDataSource.count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = presenter.tableDataSource[indexPath.row]
+        let dequeued = tableView.dequeueReusableCell(withIdentifier: model.cellIdentifier, for: indexPath)
+        let cell = dequeued as! CellViewModel
+        cell.configure(with: model)
+        return dequeued
+    }
     
 }
 
@@ -18,13 +66,13 @@ extension OrganizationHomeController: OrganizationHomeView {
     
 }
 
-extension OrganizationHomeController: Configurable {
+extension OrganizationHomeController {
     
-    public static func configured() -> OrganizationHomeController {
+    public static func configured(organization: Organization, members: [User]) -> OrganizationHomeController {
         let storyboard = UIStoryboard(name: "ManagerMain", bundle: Bundle(identifier: "WayOut.WayOutManager"))
         let vc = storyboard.instantiateViewController(identifier: "OrganizationHomeController") as! OrganizationHomeController
         let configurator = OrganizationHomeConfiguratorImpl()
-        configurator.configure(vc)
+        configurator.configure(vc, organization: organization, members: members)
         return vc
     }
     

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Core
 
 protocol SignInOrganizationRouter {
-    func navigateToHome()
+    func navigateToHome(of organization: Organization, with members: [User])
     func nagigateToSignUp()
 }
 
@@ -20,8 +21,8 @@ class SignInOrganizationRouterImpl: SignInOrganizationRouter {
         self.controller = controller
     }
     
-    func navigateToHome() {
-        let vc = OrganizationHomeController.configured()
+    func navigateToHome(of organization: Organization, with members: [User]) {
+        let vc = OrganizationHomeController.configured(organization: organization, members: members)
         controller?.navigationController?.setViewControllers([vc], animated: true)
     }
     

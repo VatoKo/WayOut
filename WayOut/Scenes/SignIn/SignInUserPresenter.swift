@@ -44,7 +44,7 @@ class SignInUserPresenterImpl: SignInUserPresenter {
                 case .success(let user):
                     let isOrganizationMember = user.organizationId != nil
                     if isOrganizationMember {
-                        OrganizationManager.shared.fetchAllOrganizations { [weak self] result in
+                        DatabaseManager.shared.fetchAllOrganizations { [weak self] result in
                             DispatchQueue.main.async {
                                 guard let self = self else { return }
                                 self.view.isLoading = false
