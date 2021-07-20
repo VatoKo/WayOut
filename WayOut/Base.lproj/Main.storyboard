@@ -607,10 +607,10 @@ You've been missed!</string>
             </objects>
             <point key="canvasLocation" x="3813.04347826087" y="-238.39285714285714"/>
         </scene>
-        <!--Member Dialog-->
+        <!--Info Dialog-->
         <scene sceneID="rg0-KO-2m0">
             <objects>
-                <viewController storyboardIdentifier="InfoDialog" id="GrM-ke-c2o" customClass="MemberDialog" customModule="WayOut" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoDialog" id="GrM-ke-c2o" customClass="InfoDialog" customModule="WayOut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qK0-kK-cfa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

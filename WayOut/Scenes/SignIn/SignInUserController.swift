@@ -66,7 +66,7 @@ extension SignInUserController {
         signUpButton.setBackgroundColor(.clear)
         
         emailField.text = "j.doe@gmail.com"
-        passwordField.text = "12345678"
+        passwordField.text = "qwerty123"
     }
     
 }

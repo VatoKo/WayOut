@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Core
 import NotificationBannerSwift
 import MaterialComponents.MDCOutlinedTextField
 
@@ -105,6 +106,10 @@ extension OrganizationChooserController: OrganizationChooserView {
         tableView.reloadData()
     }
     
+    func closeController() {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: Touch Events
@@ -117,13 +122,13 @@ extension OrganizationChooserController {
     
 }
 
-extension OrganizationChooserController: Configurable {
+extension OrganizationChooserController {
     
-    static func configured() -> OrganizationChooserController {
+    static func configured(user: User) -> OrganizationChooserController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "OrganizationChooserController") as! OrganizationChooserController
         let configurator = OrganizationChooserConfiguratorImpl()
-        configurator.configure(vc)
+        configurator.configure(vc, user: user)
         return vc
     }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Core
 import MobileCoreServices
 
 protocol UserHomeRouter {
@@ -13,7 +14,7 @@ protocol UserHomeRouter {
     func openGallery()
     func showInfoDialog(with model: InfoDialogModel)
     func openWelcomePage()
-    func openOrganizationChooser()
+    func openOrganizationChooser(user: User)
 }
 
 class UserHomeRouterImpl: UserHomeRouter {
@@ -51,8 +52,8 @@ class UserHomeRouterImpl: UserHomeRouter {
         controller?.navigationController?.setViewControllers([vc], animated: true)
     }
     
-    func openOrganizationChooser() {
-        let vc = OrganizationChooserController.configured()
+    func openOrganizationChooser(user: User) {
+        let vc = OrganizationChooserController.configured(user: user)
         vc.modalPresentationStyle = .fullScreen
         controller?.present(vc, animated: true, completion: nil)
     }

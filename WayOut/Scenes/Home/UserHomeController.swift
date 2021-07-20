@@ -36,6 +36,7 @@ extension UserHomeController {
         tableView.registerNib(with: "TitleCell", type: TitleCell.self)
         tableView.registerNib(with: "JoinOrganizationCell", type: JoinOrganizationCell.self)
         tableView.registerNib(with: "MyOrganizationCell", type: MyOrganizationCell.self)
+        tableView.registerNib(with: "PendingRequestCell", type: PendingRequestCell.self)
         
         scanButton.setTitle("Scan Number Plate", for: .normal)
         scanButton.setTitleColor(.white, for: .normal)
@@ -137,6 +138,10 @@ extension UserHomeController: UserHomeView {
 
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func reloadList() {
+        tableView.reloadData()
     }
     
 }

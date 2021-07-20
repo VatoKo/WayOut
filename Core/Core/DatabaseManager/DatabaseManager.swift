@@ -13,6 +13,7 @@ public class DatabaseManager: DatabaseAccessible {
     
     private lazy var organizationsReference = databaseReference.child("organizations")
     private lazy var usersReference = databaseReference.child("users")
+    private lazy var membershipRequests = databaseReference.child("membership_requests")
     
     private init() {}
     
@@ -53,6 +54,27 @@ public class DatabaseManager: DatabaseAccessible {
                 }
             } else {
                 completion(.failure(DatabaseManagerNoDataError()))
+            }
+        }
+    }
+    
+    public func sendMembershipRequest(userId: String, organizationId: String) {
+        let requestData = [
+            "userId": userId,
+            "organizationId": organizationId,
+            "status": "pending"
+        ]
+        
+        self.membershipRequests.getData { (error, snapshot) in
+            if let _ = error {
+                return
+            } else if snapshot.exists() {
+                if var requests = snapshot.value as? [[String: Any?]] {
+                    requests.append(requestData)
+                    self.membershipRequests.setValue(requests)
+                }
+            } else {
+                self.membershipRequests.setValue([requestData])
             }
         }
     }

@@ -61,6 +61,9 @@
 		11D8157126750B980028EFF4 /* OrganizationChooserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8156D26750B980028EFF4 /* OrganizationChooserController.swift */; };
 		11D8157226750B980028EFF4 /* OrganizationChooserConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8156E26750B980028EFF4 /* OrganizationChooserConfigurator.swift */; };
 		11D815992677C5440028EFF4 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D815982677C5440028EFF4 /* StringExtensions.swift */; };
+		11E9104F2692204100DB8E0D /* PendingRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9104D2692204100DB8E0D /* PendingRequestCell.swift */; };
+		11E910502692204100DB8E0D /* PendingRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E9104E2692204100DB8E0D /* PendingRequestCell.xib */; };
+		11E910522692204F00DB8E0D /* PendingRequestCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E910512692204F00DB8E0D /* PendingRequestCellModel.swift */; };
 		11EE830C2667F4EB000C12B1 /* PlateScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE83082667F4EB000C12B1 /* PlateScannerPresenter.swift */; };
 		11EE830D2667F4EB000C12B1 /* PlateScannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE83092667F4EB000C12B1 /* PlateScannerRouter.swift */; };
 		11EE830E2667F4EB000C12B1 /* PlateScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE830A2667F4EB000C12B1 /* PlateScannerController.swift */; };
@@ -157,6 +160,9 @@
 		11D8156D26750B980028EFF4 /* OrganizationChooserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationChooserController.swift; sourceTree = "<group>"; };
 		11D8156E26750B980028EFF4 /* OrganizationChooserConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationChooserConfigurator.swift; sourceTree = "<group>"; };
 		11D815982677C5440028EFF4 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		11E9104D2692204100DB8E0D /* PendingRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingRequestCell.swift; sourceTree = "<group>"; };
+		11E9104E2692204100DB8E0D /* PendingRequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingRequestCell.xib; sourceTree = "<group>"; };
+		11E910512692204F00DB8E0D /* PendingRequestCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingRequestCellModel.swift; sourceTree = "<group>"; };
 		11EE83082667F4EB000C12B1 /* PlateScannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerPresenter.swift; sourceTree = "<group>"; };
 		11EE83092667F4EB000C12B1 /* PlateScannerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerRouter.swift; sourceTree = "<group>"; };
 		11EE830A2667F4EB000C12B1 /* PlateScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateScannerController.swift; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 		1147BFCE264DA8CA0030B6B4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				11E9104A2692202600DB8E0D /* PendingRequestCell */,
 				11D815612674F3900028EFF4 /* MyOrganizationCell */,
 				112C0BCB26596D8C0073FC92 /* JoinOrganizationCell */,
 				1147BFDD264DAFF70030B6B4 /* GreetingCell */,
@@ -234,6 +241,7 @@
 				112C0BC926596C8B0073FC92 /* TitleCellModel.swift */,
 				112C0BD02659710C0073FC92 /* JoinOrganizationCellModel.swift */,
 				11D815682674F4030028EFF4 /* MyOrganizationCellModel.swift */,
+				11E910512692204F00DB8E0D /* PendingRequestCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -443,6 +451,15 @@
 			path = OrganizationChooser;
 			sourceTree = "<group>";
 		};
+		11E9104A2692202600DB8E0D /* PendingRequestCell */ = {
+			isa = PBXGroup;
+			children = (
+				11E9104D2692204100DB8E0D /* PendingRequestCell.swift */,
+				11E9104E2692204100DB8E0D /* PendingRequestCell.xib */,
+			);
+			path = PendingRequestCell;
+			sourceTree = "<group>";
+		};
 		11EE83052667F4A6000C12B1 /* PlateScanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,6 +578,7 @@
 				114DE0FA2643039A00B7AE7F /* LaunchScreen.storyboard in Resources */,
 				114DE1052643059000B7AE7F /* GoogleService-Info.plist in Resources */,
 				1147BFE1264DB0160030B6B4 /* GreetingCell.xib in Resources */,
+				11E910502692204100DB8E0D /* PendingRequestCell.xib in Resources */,
 				114DE0F72643039A00B7AE7F /* Assets.xcassets in Resources */,
 				11D815672674F3B90028EFF4 /* MyOrganizationCell.xib in Resources */,
 				1147BFD3264DA90B0030B6B4 /* PersonalInfoCell.xib in Resources */,
@@ -636,6 +654,7 @@
 				11EE830C2667F4EB000C12B1 /* PlateScannerPresenter.swift in Sources */,
 				11EE830F2667F4EB000C12B1 /* PlateScannerConfigurator.swift in Sources */,
 				114D2ADB264B0784008071BA /* WelcomeRouter.swift in Sources */,
+				11E9104F2692204100DB8E0D /* PendingRequestCell.swift in Sources */,
 				11BD34F4266BD1FF00C70734 /* InfoDialog.swift in Sources */,
 				114DE1F52646F63100B7AE7F /* WayoutDummy.swift in Sources */,
 				11D8157126750B980028EFF4 /* OrganizationChooserController.swift in Sources */,
@@ -643,6 +662,7 @@
 				112C0BCA26596C8B0073FC92 /* TitleCellModel.swift in Sources */,
 				1147BFD2264DA90B0030B6B4 /* PersonalInfoCell.swift in Sources */,
 				114D2B1D264C413A008071BA /* LoaderOverlayable.swift in Sources */,
+				11E910522692204F00DB8E0D /* PendingRequestCellModel.swift in Sources */,
 				11D815662674F3B90028EFF4 /* MyOrganizationCell.swift in Sources */,
 				1147BFC8264DA84C0030B6B4 /* Reusable.swift in Sources */,
 				11BD34E9266BC0E600C70734 /* PlateRecognizer.swift in Sources */,

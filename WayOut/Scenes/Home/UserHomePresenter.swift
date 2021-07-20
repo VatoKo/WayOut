@@ -13,35 +13,37 @@ protocol UserHomeView: AnyObject {
     var scanButtonIsEnabled: Bool { get set }
     func showImageSourceSelectionSheet(didSelectCamera: @escaping () -> Void, didSelectGallery: @escaping () -> Void)
     func showBanner(title: String?, subtitle: String, style: BannerStyle)
+    func reloadList()
 }
 
 protocol UserHomePresenter {
-    var tableDataSource: [CellModel] { get set }
+    var tableDataSource: [CellModel] { get }
     func viewDidLoad()
     func didTapScan()
     func didSelectFromGallery(photo: UIImage?)
 }
 
 class UserHomePresenterImpl: UserHomePresenter {
-    
-    lazy var tableDataSource: [CellModel] = [
-        GreetingCellModel(greetingText: "Hello, \(user.name)!", didTapLogout: handleLogout),
-        PersonalInfoCellModel(
-            name: "\(user.name) \(user.surname)",
-            numberPlate: user.numberPlate,
-            phoneNumber: user.phoneNumber,
-            email: user.email
-        ),
-        TitleCellModel(title: "Your organization"),
-        user.organizationId == nil
-            ? JoinOrganizationCellModel(didTapJoinOrganization: handleJoinOrganization)
-            : MyOrganizationCellModel(organizationName: organization!.name, organizationEmail: organization!.email, numberOfMembers: "100")
-    ]
+        
+    var tableDataSource: [CellModel] {
+        return [
+            GreetingCellModel(greetingText: "Hello, \(user.name)!", didTapLogout: handleLogout),
+            PersonalInfoCellModel(
+                name: "\(user.name) \(user.surname)",
+                numberPlate: user.numberPlate,
+                phoneNumber: user.phoneNumber,
+                email: user.email
+            ),
+            TitleCellModel(title: "Your organization"),
+            organizationCellModel
+        ]
+    }
     
     private let user: User
     private let organization: Organization?
     private let plateRecognizer: PlateRecognizer
     private let plateFinder: PlateFinder
+    private var membershipRequestIsSent = false
     
     private weak var view: UserHomeView!
     private var router: UserHomeRouter
@@ -65,6 +67,7 @@ class UserHomePresenterImpl: UserHomePresenter {
     func viewDidLoad() {
         let isOrganizationMember = user.organizationId != nil
         view.scanButtonIsEnabled = isOrganizationMember
+        NotificationCenter.default.addObserver(self, selector: #selector(handleMembershipRequestSent), name: .init("MEMBERSHIP_REQUEST_DID_SEND"), object: nil)
     }
     
     func didTapScan() {
@@ -126,7 +129,7 @@ class UserHomePresenterImpl: UserHomePresenter {
     }
     
     private func handleJoinOrganization() {
-        router.openOrganizationChooser()
+        router.openOrganizationChooser(user: user)
     }
     
 }
@@ -151,4 +154,33 @@ extension UserHomePresenterImpl: PlateScannerControllerDelegate {
     
 }
 
+extension UserHomePresenterImpl {
+    
+    @objc
+    private func handleMembershipRequestSent() {
+        membershipRequestIsSent = true
+        view.reloadList()
+    }
+    
+}
+
+
+extension UserHomePresenterImpl  {
+    
+    var organizationCellModel: CellModel {
+        if membershipRequestIsSent {
+            return PendingRequestCellModel()
+        } else {
+            return user.organizationId == nil
+                ? JoinOrganizationCellModel(didTapJoinOrganization: handleJoinOrganization)
+                : MyOrganizationCellModel(
+                    organizationId: organization!.id,
+                    organizationName: organization!.name,
+                    organizationEmail: organization!.email,
+                    numberOfMembers: "100"
+                )
+        }
+    }
+    
+}
 
