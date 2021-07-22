@@ -18,37 +18,60 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, ... !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eO9-et-BBn">
-                        <rect key="frame" x="16" y="16" width="240" height="35"/>
+                        <rect key="frame" x="16" y="16" width="167" height="35"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="32"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvM-nA-4CX">
-                        <rect key="frame" x="272" y="17.5" width="32" height="32"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="32" id="UpU-5S-KXI"/>
-                            <constraint firstAttribute="width" secondItem="NvM-nA-4CX" secondAttribute="height" multiplier="1:1" id="Xfs-wy-0lc"/>
-                        </constraints>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" image="manager_logout_icon"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="16"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                        <connections>
-                            <action selector="didTapButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sIb-31-bTS"/>
-                        </connections>
-                    </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cFJ-gR-ktn">
+                        <rect key="frame" x="232" y="17.5" width="72" height="32"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge4-1r-26V">
+                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="4EM-V3-iYU"/>
+                                    <constraint firstAttribute="width" secondItem="ge4-1r-26V" secondAttribute="height" multiplier="1:1" id="dbr-e8-69d"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="manager_notifications_icon"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapNotifications:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="T2q-nQ-7oC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvM-nA-4CX">
+                                <rect key="frame" x="40" y="0.0" width="32" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="UpU-5S-KXI"/>
+                                    <constraint firstAttribute="width" secondItem="NvM-nA-4CX" secondAttribute="height" multiplier="1:1" id="Xfs-wy-0lc"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="manager_logout_icon"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sIb-31-bTS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="NvM-nA-4CX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8ss-15-k2q"/>
+                    <constraint firstItem="cFJ-gR-ktn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eO9-et-BBn" secondAttribute="trailing" constant="32" id="96K-dW-LP6"/>
                     <constraint firstItem="eO9-et-BBn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Ky8-0e-MZK"/>
-                    <constraint firstAttribute="trailing" secondItem="NvM-nA-4CX" secondAttribute="trailing" constant="16" id="cQH-oD-c5q"/>
+                    <constraint firstItem="cFJ-gR-ktn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Rqd-tN-UU2"/>
                     <constraint firstAttribute="bottom" secondItem="eO9-et-BBn" secondAttribute="bottom" constant="16" id="lMb-7g-KpR"/>
+                    <constraint firstAttribute="trailing" secondItem="cFJ-gR-ktn" secondAttribute="trailing" constant="16" id="paG-Gp-VAV"/>
                     <constraint firstItem="eO9-et-BBn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="sra-Cj-Iyz"/>
-                    <constraint firstItem="NvM-nA-4CX" firstAttribute="leading" secondItem="eO9-et-BBn" secondAttribute="trailing" constant="16" id="z4u-Mf-1B6"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -61,5 +84,6 @@
     </objects>
     <resources>
         <image name="manager_logout_icon" width="16" height="16"/>
+        <image name="manager_notifications_icon" width="16" height="16"/>
     </resources>
 </document>

@@ -23,7 +23,7 @@ class SignInOrganizationRouterImpl: SignInOrganizationRouter {
     
     func navigateToHome(of organization: Organization, with members: [User]) {
         let vc = OrganizationHomeController.configured(organization: organization, members: members)
-        controller?.navigationController?.setViewControllers([vc], animated: true)
+        controller?.navigationController?.pushViewController(vc, animated: true)
     }
     
     func nagigateToSignUp() {

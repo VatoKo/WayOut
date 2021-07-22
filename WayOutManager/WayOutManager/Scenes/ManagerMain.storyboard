@@ -516,6 +516,37 @@
             </objects>
             <point key="canvasLocation" x="1304" y="-101"/>
         </scene>
+        <!--Membership Requests-->
+        <scene sceneID="Uq4-V8-O6K">
+            <objects>
+                <viewController storyboardIdentifier="MembershipRequestController" title="Membership Requests" id="UY9-Ut-cEQ" customClass="MembershipRequestController" customModule="WayOutManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MqP-f2-I5O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yLk-ia-XAe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WP9-qf-uks"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="WP9-qf-uks" firstAttribute="bottom" secondItem="yLk-ia-XAe" secondAttribute="bottom" id="35T-sJ-cmH"/>
+                            <constraint firstItem="yLk-ia-XAe" firstAttribute="leading" secondItem="WP9-qf-uks" secondAttribute="leading" id="Xn4-GX-yTN"/>
+                            <constraint firstItem="yLk-ia-XAe" firstAttribute="top" secondItem="WP9-qf-uks" secondAttribute="top" id="jae-A4-dKj"/>
+                            <constraint firstItem="WP9-qf-uks" firstAttribute="trailing" secondItem="yLk-ia-XAe" secondAttribute="trailing" id="lwd-AQ-2cU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="yLk-ia-XAe" id="0B6-bA-0VC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vq8-5L-5sy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2223" y="-101"/>
+        </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

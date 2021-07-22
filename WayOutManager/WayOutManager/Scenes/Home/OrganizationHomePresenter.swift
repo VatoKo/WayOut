@@ -56,8 +56,22 @@ class OrganizationHomePresenterImpl: OrganizationHomePresenter {
         )
     }
     
+    private func handleNotifications() {
+        router.openNotifications(organization: organization)
+    }
+    
     private func handleLogout() {
-        
+        Authentication.shared.logout { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                switch result {
+                case .success:
+                    self.router.openWelcomePage()
+                case .failure(let error):
+                    self.view?.showBanner(title: "Error", subtitle: error.localizedDescription, style: .danger)
+                }
+            }
+        }
     }
 }
 
@@ -65,7 +79,7 @@ extension OrganizationHomePresenterImpl {
     
     var staticCellModels: [CellModel] {
         return [
-            GreetingCellModel(greetingText: "WayOut", didTapLogout: handleLogout),
+            GreetingCellModel(greetingText: "WayOut", didTapNotifications: handleNotifications, didTapLogout: handleLogout),
             MyOrganizationCellModel(organizationName: organization.name, organizationEmail: organization.email, numberOfMembers: "\(members.count)"),
             TitleCellModel(title: "Your organization members")
         ]

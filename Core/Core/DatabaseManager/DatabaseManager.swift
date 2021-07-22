@@ -79,6 +79,26 @@ public class DatabaseManager: DatabaseAccessible {
         }
     }
     
+    public func fetchAllMembershipRequest(completion: @escaping (_ result: Result<[MembershipRequest], Error>) -> Void) {
+        membershipRequests.getData { (error, snapshot) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            } else if snapshot.exists() {
+                if let requestsData = snapshot.value as? [[String: Any?]],
+                   let requestsJson = try? JSONSerialization.data(withJSONObject: requestsData, options: []),
+                   let requests = try? JSONDecoder().decode([MembershipRequest].self, from: requestsJson) {
+                    
+                    completion(.success(requests))
+                } else {
+                    completion(.failure(DatabaseManagerNoDataError()))
+                }
+            } else {
+                completion(.failure(DatabaseManagerNoDataError()))
+            }
+        }
+    }
+    
 }
 
 public struct DatabaseManagerNoDataError: Error {

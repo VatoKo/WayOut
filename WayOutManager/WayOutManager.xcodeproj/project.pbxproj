@@ -10,6 +10,9 @@
 		114DE22B2646F83C00B7AE7F /* WayOutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 114DE2292646F83C00B7AE7F /* WayOutManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		114DE2322646F85600B7AE7F /* WayoutManagerDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DE2312646F85600B7AE7F /* WayoutManagerDummy.swift */; };
 		114DE267264808F300B7AE7F /* Core.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 114DE265264808DB00B7AE7F /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		11AA4DA526A9DB41000E9EB7 /* MembershipRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA4DA326A9DB41000E9EB7 /* MembershipRequestCell.swift */; };
+		11AA4DA626A9DB41000E9EB7 /* MembershipRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AA4DA426A9DB41000E9EB7 /* MembershipRequestCell.xib */; };
+		11AA4DA826A9DBB7000E9EB7 /* MembershipRequestCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA4DA726A9DBB7000E9EB7 /* MembershipRequestCellModel.swift */; };
 		11DF29FA268746A300E44942 /* ManagerMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DF29F9268746A300E44942 /* ManagerMain.storyboard */; };
 		11DF29FF268746DF00E44942 /* SignInOrganizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF29FB268746DF00E44942 /* SignInOrganizationPresenter.swift */; };
 		11DF2A00268746DF00E44942 /* SignInOrganizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF29FC268746DF00E44942 /* SignInOrganizationRouter.swift */; };
@@ -46,6 +49,10 @@
 		11E910332690B18600DB8E0D /* NoMembersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E910312690B18600DB8E0D /* NoMembersCell.xib */; };
 		11E910342690B18600DB8E0D /* NoMembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E910322690B18600DB8E0D /* NoMembersCell.swift */; };
 		11E910362690B1E000DB8E0D /* NoMembersCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E910352690B1E000DB8E0D /* NoMembersCellModel.swift */; };
+		11F7096426A746120031356B /* MembershipRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F7096026A746120031356B /* MembershipRequestPresenter.swift */; };
+		11F7096526A746120031356B /* MembershipRequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F7096126A746120031356B /* MembershipRequestRouter.swift */; };
+		11F7096626A746120031356B /* MembershipRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F7096226A746120031356B /* MembershipRequestController.swift */; };
+		11F7096726A746120031356B /* MembershipRequestConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F7096326A746120031356B /* MembershipRequestConfigurator.swift */; };
 		16D248BE25414030B8EB232D /* Pods_WayOutManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACFEEAB14A66E8DF025AC577 /* Pods_WayOutManager.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +86,9 @@
 		114DE22A2646F83C00B7AE7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		114DE2312646F85600B7AE7F /* WayoutManagerDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayoutManagerDummy.swift; sourceTree = "<group>"; };
 		114DE260264808DB00B7AE7F /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = ../Core/Core.xcodeproj; sourceTree = "<group>"; };
+		11AA4DA326A9DB41000E9EB7 /* MembershipRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipRequestCell.swift; sourceTree = "<group>"; };
+		11AA4DA426A9DB41000E9EB7 /* MembershipRequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembershipRequestCell.xib; sourceTree = "<group>"; };
+		11AA4DA726A9DBB7000E9EB7 /* MembershipRequestCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipRequestCellModel.swift; sourceTree = "<group>"; };
 		11DF29F9268746A300E44942 /* ManagerMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManagerMain.storyboard; sourceTree = "<group>"; };
 		11DF29FB268746DF00E44942 /* SignInOrganizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInOrganizationPresenter.swift; sourceTree = "<group>"; };
 		11DF29FC268746DF00E44942 /* SignInOrganizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInOrganizationRouter.swift; sourceTree = "<group>"; };
@@ -115,6 +125,10 @@
 		11E910312690B18600DB8E0D /* NoMembersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoMembersCell.xib; sourceTree = "<group>"; };
 		11E910322690B18600DB8E0D /* NoMembersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoMembersCell.swift; sourceTree = "<group>"; };
 		11E910352690B1E000DB8E0D /* NoMembersCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMembersCellModel.swift; sourceTree = "<group>"; };
+		11F7096026A746120031356B /* MembershipRequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipRequestPresenter.swift; sourceTree = "<group>"; };
+		11F7096126A746120031356B /* MembershipRequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipRequestRouter.swift; sourceTree = "<group>"; };
+		11F7096226A746120031356B /* MembershipRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipRequestController.swift; sourceTree = "<group>"; };
+		11F7096326A746120031356B /* MembershipRequestConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipRequestConfigurator.swift; sourceTree = "<group>"; };
 		ACFEEAB14A66E8DF025AC577 /* Pods_WayOutManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WayOutManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB43FE3A6C9115C50292F440 /* Pods-WayOutManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayOutManager.debug.xcconfig"; path = "Target Support Files/Pods-WayOutManager/Pods-WayOutManager.debug.xcconfig"; sourceTree = "<group>"; };
 		FB9810166DE682947494175F /* Pods-WayOutManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WayOutManager.release.xcconfig"; path = "Target Support Files/Pods-WayOutManager/Pods-WayOutManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,9 +194,36 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		11AA4D9F26A9DB17000E9EB7 /* TableComponents */ = {
+			isa = PBXGroup;
+			children = (
+				11AA4DA226A9DB29000E9EB7 /* Models */,
+				11AA4DA126A9DB21000E9EB7 /* Cells */,
+			);
+			path = TableComponents;
+			sourceTree = "<group>";
+		};
+		11AA4DA126A9DB21000E9EB7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				11AA4DA326A9DB41000E9EB7 /* MembershipRequestCell.swift */,
+				11AA4DA426A9DB41000E9EB7 /* MembershipRequestCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		11AA4DA226A9DB29000E9EB7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11AA4DA726A9DBB7000E9EB7 /* MembershipRequestCellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		11DF29F62687465B00E44942 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				11F7095E26A745D60031356B /* MembershipRequest */,
 				11DF2A2926874D6E00E44942 /* Home */,
 				11DF2A1F26874CB700E44942 /* SignUp */,
 				11DF29F82687466900E44942 /* SignIn */,
@@ -365,6 +406,18 @@
 			path = NoMembersCell;
 			sourceTree = "<group>";
 		};
+		11F7095E26A745D60031356B /* MembershipRequest */ = {
+			isa = PBXGroup;
+			children = (
+				11AA4D9F26A9DB17000E9EB7 /* TableComponents */,
+				11F7096226A746120031356B /* MembershipRequestController.swift */,
+				11F7096026A746120031356B /* MembershipRequestPresenter.swift */,
+				11F7096126A746120031356B /* MembershipRequestRouter.swift */,
+				11F7096326A746120031356B /* MembershipRequestConfigurator.swift */,
+			);
+			path = MembershipRequest;
+			sourceTree = "<group>";
+		};
 		65CCB860EC42ADFEB8298A1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +530,7 @@
 				11E9102A26909CD600DB8E0D /* MemberCell.xib in Resources */,
 				11DF2A612687672F00E44942 /* GreetingCell.xib in Resources */,
 				11E9102326909BC400DB8E0D /* TitleCell.xib in Resources */,
+				11AA4DA626A9DB41000E9EB7 /* MembershipRequestCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,14 +571,20 @@
 				11E9102F2690A9CD00DB8E0D /* MemberDialog.swift in Sources */,
 				11DF2A062687475D00E44942 /* Configurable.swift in Sources */,
 				11DF2A682687694C00E44942 /* UIViewExtensions.swift in Sources */,
+				11F7096626A746120031356B /* MembershipRequestController.swift in Sources */,
+				11AA4DA826A9DBB7000E9EB7 /* MembershipRequestCellModel.swift in Sources */,
 				11DF2A2E26874D8500E44942 /* OrganizationHomePresenter.swift in Sources */,
 				11DF2A2526874CCA00E44942 /* SignUpOrganizationPresenter.swift in Sources */,
+				11F7096726A746120031356B /* MembershipRequestConfigurator.swift in Sources */,
 				114DE2322646F85600B7AE7F /* WayoutManagerDummy.swift in Sources */,
 				11DF2A2826874CCA00E44942 /* SignUpOrganizationConfigurator.swift in Sources */,
+				11F7096426A746120031356B /* MembershipRequestPresenter.swift in Sources */,
 				11DF2A3026874D8500E44942 /* OrganizationHomeController.swift in Sources */,
 				11DF29FF268746DF00E44942 /* SignInOrganizationPresenter.swift in Sources */,
 				11DF2A01268746DF00E44942 /* SignInOrganizationController.swift in Sources */,
+				11AA4DA526A9DB41000E9EB7 /* MembershipRequestCell.swift in Sources */,
 				11DF2A3126874D8500E44942 /* OrganizationHomeConfigurator.swift in Sources */,
+				11F7096526A746120031356B /* MembershipRequestRouter.swift in Sources */,
 				11E9101E269099A700DB8E0D /* OrganizationCardCellModel.swift in Sources */,
 				11E9102226909BC400DB8E0D /* TitleCell.swift in Sources */,
 				11DF2A2626874CCA00E44942 /* SignUpOrganizationRouter.swift in Sources */,

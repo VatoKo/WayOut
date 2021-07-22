@@ -65,6 +65,9 @@ extension SignInOrganizationController {
         signUpButton.setTitleColor(.black, for: .normal)
         signUpButton.setTitleFont(UIFont(name: "Futura", size: 12), for: .normal)
         signUpButton.setBackgroundColor(.clear)
+        
+        emailField.text = "freeuni@gmail.com"
+        passwordField.text = "12345678"
     }
     
 }

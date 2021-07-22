@@ -22,7 +22,6 @@ extension OrganizationHomeController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: true)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -38,6 +37,11 @@ extension OrganizationHomeController {
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
 }

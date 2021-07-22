@@ -10,6 +10,7 @@ import Foundation
 struct GreetingCellModel: CellModel {
     
     let greetingText: String
+    let didTapNotifications: () -> Void
     let didTapLogout: () -> Void
     
     var cellIdentifier: String {
