@@ -11,6 +11,7 @@ import Core
 protocol MembershipRequestView: AnyObject {
     func reloadList()
     func removeListItem(at index: Int)
+    func insertListItems(at indices: [Int])
 }
 
 protocol MembershipRequestPresenter {
@@ -74,7 +75,7 @@ class MembershipRequestPresenterImpl: MembershipRequestPresenter {
                 switch result {
                 case .success(let users):
                     self.requestSendingUsers = users.filter { user in self.activeRequests.contains(where: { request in request.userId == user.id }) }
-                    self.view?.reloadList()
+                    self.view?.insertListItems(at: Array(0..<self.requestSendingUsers.count))
                     print("Request sending users: ", self.requestSendingUsers)
                 case .failure(let error):
                     print(error.localizedDescription)

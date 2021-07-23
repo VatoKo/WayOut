@@ -71,6 +71,14 @@ extension MembershipRequestController: MembershipRequestView {
         tableView.endUpdates()
     }
     
+    func insertListItems(at indices: [Int]) {
+        tableView.beginUpdates()
+        
+        tableView.insertRows(at: indices.map { IndexPath(row: $0, section: .zero) }, with: .fade)
+        
+        tableView.endUpdates()
+    }
+    
 }
 
 extension MembershipRequestController {
