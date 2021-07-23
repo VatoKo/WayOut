@@ -85,7 +85,7 @@ class UserHomePresenterImpl: UserHomePresenter {
                 case .success(let recognizedData):
                     self.handleRecognizedPlate(data: recognizedData)
                 case .failure(let error):
-                    self.view.showBanner(title: "Recognition Failed", subtitle: error.localizedDescription, style: .danger)                    
+                    self.view.showBanner(title: "Recognition Failed", subtitle: error.localizedDescription, style: .danger)
                 }
             }
         }

@@ -11,19 +11,20 @@ import NotificationBannerSwift
 
 protocol OrganizationHomeView: AnyObject {
     func showBanner(title: String?, subtitle: String, style: BannerStyle)
+    func reloadList()
 }
 
 protocol OrganizationHomePresenter {
-    var tableDataSource: [CellModel] { get set }
+    var tableDataSource: [CellModel] { get }
     func viewDidLoad()
 }
 
 class OrganizationHomePresenterImpl: OrganizationHomePresenter {
     
-    lazy var tableDataSource: [CellModel] = staticCellModels + (membersModels ?? [noMembersModel])
+    var tableDataSource: [CellModel] { return staticCellModels + (membersModels ?? [noMembersModel]) }
     
     private let organization: Organization
-    private let members: [User]
+    private var members: [User]
     
     private weak var view: OrganizationHomeView?
     private var router: OrganizationHomeRouter
@@ -41,7 +42,7 @@ class OrganizationHomePresenterImpl: OrganizationHomePresenter {
     }
     
     func viewDidLoad() {
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadMembers), name: .init("SHOULD_RELOAD_MEMBERS"), object: nil)
     }
     
     private func didTapMemberCell(model: MemberCellModel) {
@@ -73,6 +74,23 @@ class OrganizationHomePresenterImpl: OrganizationHomePresenter {
             }
         }
     }
+    
+    @objc
+    private func reloadMembers() {
+        DatabaseManager.shared.fetchAllUsers { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let users):
+                    self.members = users.filter { $0.organizationId == self.organization.id }
+                    self.view?.reloadList()
+                case .failure(let error):
+                    self.view?.showBanner(title: "Error", subtitle: error.localizedDescription, style: .danger)
+                }
+            }
+        }
+    }
+    
 }
 
 extension OrganizationHomePresenterImpl {
@@ -87,14 +105,16 @@ extension OrganizationHomePresenterImpl {
     
     var membersModels: [CellModel]? {
         if !members.isEmpty {
-            return members.map {
-                MemberCellModel(
-                    id: $0.id,
-                    name: "\($0.name) \($0.surname)",
-                    numberPlate: $0.numberPlate,
-                    didTapCell: didTapMemberCell(model:)
-                )
-            }
+            return members
+                .sorted(by: { $0.numberPlate < $1.numberPlate })
+                .map {
+                    MemberCellModel(
+                        id: $0.id,
+                        name: "\($0.name) \($0.surname)",
+                        numberPlate: $0.numberPlate,
+                        didTapCell: didTapMemberCell(model:)
+                    )
+                }
         } else {
             return nil
         }

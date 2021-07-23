@@ -99,7 +99,16 @@ public class DatabaseManager: DatabaseAccessible {
         }
     }
     
-    public func declineMembershipRequest(from userId: String, to organizationId: String, completion: @escaping (_ result: Result<String, Error>) -> Void) {
+    enum MembershipRequestStatus: String {
+        case pending, accept, decline
+    }
+    
+    private func setMembershipRequest(
+        status: MembershipRequestStatus,
+        from userId: String,
+        to organizationId: String,
+        completion: @escaping (_ result: Result<String, Error>) -> Void
+    ) {
         membershipRequests.getData { (error, snapshot) in
             if let error = error {
                 completion(.failure(error))
@@ -108,7 +117,7 @@ public class DatabaseManager: DatabaseAccessible {
                 if var requestsData = snapshot.value as? [[String: String]] {
                     for index in requestsData.indices {
                         if requestsData[index]["userId"] == userId && requestsData[index]["organizationId"] == organizationId {
-                            requestsData[index]["status"] = "decline"
+                            requestsData[index]["status"] = status.rawValue
                             self.membershipRequests.setValue(requestsData)
                             break
                         }
@@ -119,6 +128,53 @@ public class DatabaseManager: DatabaseAccessible {
                 }
             } else {
                 completion(.failure(DatabaseManagerNoDataError()))
+            }
+        }
+    }
+    
+    private func set(organizationId: String, to userId: String, completion: @escaping (_ result: Result<String, Error>) -> Void) {
+        self.usersReference.getData { (error, snapshot) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            } else if snapshot.exists() {
+                if var usersData = snapshot.value as? [[String: String]] {
+                    for index in usersData.indices {
+                        if usersData[index]["id"] == userId {
+                            usersData[index]["organizationId"] = organizationId
+                            self.usersReference.setValue(usersData)
+                            break
+                        }
+                    }
+                    completion(.success(String()))
+                } else {
+                    completion(.failure(DatabaseManagerNoDataError()))
+                }
+            } else {
+                completion(.failure(DatabaseManagerNoDataError()))
+            }
+        }
+    }
+    
+    public func declineMembershipRequest(from userId: String, to organizationId: String, completion: @escaping (_ result: Result<String, Error>) -> Void) {
+        setMembershipRequest(status: .decline, from: userId, to: organizationId, completion: completion)
+    }
+    
+    public func acceptMembershipRequest(from userId: String, to organizationId: String, completion: @escaping (_ result: Result<String, Error>) -> Void) {
+        setMembershipRequest(status: .accept, from: userId, to: organizationId) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.set(organizationId: organizationId, to: userId) { result in
+                    switch result {
+                    case .success:
+                        completion(.success(String()))
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                }
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

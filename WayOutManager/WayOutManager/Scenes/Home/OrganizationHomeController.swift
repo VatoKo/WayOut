@@ -83,6 +83,10 @@ extension OrganizationHomeController: OrganizationHomeView {
         banner.show()
     }
     
+    func reloadList() {
+        tableView.reloadData()
+    }
+    
 }
 
 extension OrganizationHomeController {

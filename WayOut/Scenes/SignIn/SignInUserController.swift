@@ -65,7 +65,7 @@ extension SignInUserController {
         signUpButton.setTitleFont(UIFont(name: "Futura", size: 12), for: .normal)
         signUpButton.setBackgroundColor(.clear)
         
-        emailField.text = "j.doe@gmail.com"
+        emailField.text = "kostava.vato@gmail.com"
         passwordField.text = "qwerty123"
     }
     

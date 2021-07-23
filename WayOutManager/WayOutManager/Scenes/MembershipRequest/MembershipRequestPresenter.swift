@@ -97,7 +97,20 @@ class MembershipRequestPresenterImpl: MembershipRequestPresenter {
     }
     
     private func acceptRequest(from userId: String) {
-        print(userId)
+        DatabaseManager.shared.acceptMembershipRequest(from: userId, to: organization.id) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    let index = self.requestSendingUsers.firstIndex(where: { $0.id == userId })!
+                    self.requestSendingUsers.remove(at: index)
+                    self.view?.removeListItem(at: index)
+                    NotificationCenter.default.post(name: .init("SHOULD_RELOAD_MEMBERS"), object: nil)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
     
     private func declineRequest(from userId: String) {
