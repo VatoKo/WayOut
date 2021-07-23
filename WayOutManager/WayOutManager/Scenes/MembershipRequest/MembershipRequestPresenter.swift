@@ -10,6 +10,7 @@ import Core
 
 protocol MembershipRequestView: AnyObject {
     func reloadList()
+    func removeListItem(at index: Int)
 }
 
 protocol MembershipRequestPresenter {
@@ -37,11 +38,7 @@ class MembershipRequestPresenterImpl: MembershipRequestPresenter {
     
     private let organization: Organization
     private var activeRequests: [MembershipRequest] = []
-    private var requestSendingUsers: [User] = [] {
-        didSet {
-            view?.reloadList()
-        }
-    }
+    private var requestSendingUsers: [User] = []
     
     init(view: MembershipRequestView, router: MembershipRequestRouter, organization: Organization) {
         self.view = view
@@ -59,9 +56,7 @@ class MembershipRequestPresenterImpl: MembershipRequestPresenter {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let requests):
-                    print("All requests: ", requests)
                     self.activeRequests = requests.filter { $0.organizationId == self.organization.id && $0.status == "pending" }
-                    print("Active requests: ", self.activeRequests)
                     if !self.activeRequests.isEmpty {
                         self.fetchUsers()
                     }
@@ -79,6 +74,7 @@ class MembershipRequestPresenterImpl: MembershipRequestPresenter {
                 switch result {
                 case .success(let users):
                     self.requestSendingUsers = users.filter { user in self.activeRequests.contains(where: { request in request.userId == user.id }) }
+                    self.view?.reloadList()
                     print("Request sending users: ", self.requestSendingUsers)
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -104,7 +100,19 @@ class MembershipRequestPresenterImpl: MembershipRequestPresenter {
     }
     
     private func declineRequest(from userId: String) {
-        print(userId)
+        DatabaseManager.shared.declineMembershipRequest(from: userId, to: organization.id) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    let index = self.requestSendingUsers.firstIndex(where: { $0.id == userId })!
+                    self.requestSendingUsers.remove(at: index)
+                    self.view?.removeListItem(at: index)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
     
 }

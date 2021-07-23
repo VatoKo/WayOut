@@ -63,6 +63,14 @@ extension MembershipRequestController: MembershipRequestView {
         tableView.reloadData()
     }
     
+    func removeListItem(at index: Int) {
+        tableView.beginUpdates()
+        
+        tableView.deleteRows(at: [.init(row: index, section: .zero)], with: .fade)
+        
+        tableView.endUpdates()
+    }
+    
 }
 
 extension MembershipRequestController {

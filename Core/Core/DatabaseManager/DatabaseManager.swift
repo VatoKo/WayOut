@@ -99,6 +99,30 @@ public class DatabaseManager: DatabaseAccessible {
         }
     }
     
+    public func declineMembershipRequest(from userId: String, to organizationId: String, completion: @escaping (_ result: Result<String, Error>) -> Void) {
+        membershipRequests.getData { (error, snapshot) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            } else if snapshot.exists() {
+                if var requestsData = snapshot.value as? [[String: String]] {
+                    for index in requestsData.indices {
+                        if requestsData[index]["userId"] == userId && requestsData[index]["organizationId"] == organizationId {
+                            requestsData[index]["status"] = "decline"
+                            self.membershipRequests.setValue(requestsData)
+                            break
+                        }
+                    }
+                    completion(.success(String()))
+                } else {
+                    completion(.failure(DatabaseManagerNoDataError()))
+                }
+            } else {
+                completion(.failure(DatabaseManagerNoDataError()))
+            }
+        }
+    }
+    
 }
 
 public struct DatabaseManagerNoDataError: Error {
