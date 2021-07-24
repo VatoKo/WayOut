@@ -41,6 +41,7 @@ class UserHomePresenterImpl: UserHomePresenter {
     
     private let user: User
     private let organization: Organization?
+    private var members: [User] = []
     private let plateRecognizer: PlateRecognizer
     private let plateFinder: PlateFinder
     private var membershipRequestIsSent = false
@@ -65,9 +66,27 @@ class UserHomePresenterImpl: UserHomePresenter {
     }
     
     func viewDidLoad() {
+        if organization != nil {
+            fetchMembers()
+        }
         let isOrganizationMember = user.organizationId != nil
         view.scanButtonIsEnabled = isOrganizationMember
         NotificationCenter.default.addObserver(self, selector: #selector(handleMembershipRequestSent), name: .init("MEMBERSHIP_REQUEST_DID_SEND"), object: nil)
+    }
+    
+    private func fetchMembers() {
+        DatabaseManager.shared.fetchAllUsers { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let users):
+                    self.members = users.filter { $0.organizationId == self.organization?.id }
+                    self.view.reloadList()
+                case .failure:
+                    break
+                }
+            }
+        }
     }
     
     func didTapScan() {
@@ -177,7 +196,7 @@ extension UserHomePresenterImpl  {
                     organizationId: organization!.id,
                     organizationName: organization!.name,
                     organizationEmail: organization!.email,
-                    numberOfMembers: "100"
+                    numberOfMembers: members.count.description
                 )
         }
     }
