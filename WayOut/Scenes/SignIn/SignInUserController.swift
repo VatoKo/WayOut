@@ -52,6 +52,8 @@ extension SignInUserController {
         emailField.keyboardType = .emailAddress
         passwordField.label.text = "Password"
         passwordField.isSecureTextEntry = true
+        emailField.delegate = self
+        passwordField.delegate = self
         
         signInButton.setTitle("Sign In", for: .normal)
         signInButton.setTitleColor(.white, for: .normal)
@@ -64,9 +66,6 @@ extension SignInUserController {
         signUpButton.setTitleColor(.black, for: .normal)
         signUpButton.setTitleFont(UIFont(name: "Futura", size: 12), for: .normal)
         signUpButton.setBackgroundColor(.clear)
-        
-        emailField.text = "kostava.vato@gmail.com"
-        passwordField.text = "qwerty123"
     }
     
 }
@@ -95,6 +94,23 @@ extension SignInUserController: SignInUserView {
             style: style
         )
         banner.show()
+    }
+    
+}
+
+extension SignInUserController: UITextFieldDelegate {
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailField:
+            emailField.resignFirstResponder()
+            passwordField.becomeFirstResponder()
+        case passwordField:
+            view.endEditing(true)
+        default:
+            break
+        }
+        return true
     }
     
 }

@@ -53,6 +53,8 @@ extension SignInOrganizationController {
         emailField.keyboardType = .emailAddress
         passwordField.label.text = "Password"
         passwordField.isSecureTextEntry = true
+        emailField.delegate = self
+        passwordField.delegate = self
         
         signInButton.setTitle("Sign In", for: .normal)
         signInButton.setTitleColor(.white, for: .normal)
@@ -65,9 +67,23 @@ extension SignInOrganizationController {
         signUpButton.setTitleColor(.black, for: .normal)
         signUpButton.setTitleFont(UIFont(name: "Futura", size: 12), for: .normal)
         signUpButton.setBackgroundColor(.clear)
-        
-        emailField.text = "freeuni@gmail.com"
-        passwordField.text = "12345678"
+    }
+    
+}
+
+extension SignInOrganizationController: UITextFieldDelegate {
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailField:
+            emailField.resignFirstResponder()
+            passwordField.becomeFirstResponder()
+        case passwordField:
+            view.endEditing(true)
+        default:
+            break
+        }
+        return true
     }
     
 }
